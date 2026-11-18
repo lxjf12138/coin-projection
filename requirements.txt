@@ -1,0 +1,9 @@
+# Versions we ran; bit-exact sender/receiver agreement assumes this stack on both sides.
+torch==2.12.1
+transformers==5.23.0
+tokenizers==0.23.3
+numpy==2.4.6
+safetensors==0.8.0
+matplotlib==3.11.0
+# only for data/fetch_c4.py
+datasets>=4.0

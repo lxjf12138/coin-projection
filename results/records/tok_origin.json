@@ -1,0 +1,334 @@
+{
+ "Meta-Llama-3.1-8B": {
+  "tokenizer_model": "BPE",
+  "byte_fallback": false,
+  "n_merges": 280147,
+  "kind": "bytelevel",
+  "V": 128256,
+  "n_keys": 128000,
+  "n_pairs": 458043,
+  "utf8_classes": {
+   "complete": 126648,
+   "starts_continuation": 271,
+   "invalid": 13,
+   "partial_tail": 1068
+  },
+  "single_byte_keys": 256,
+  "space_initial_keys": 57875,
+  "space_initial_share": 0.4521484375,
+  "internal_nodes": 41302,
+  "max_chain": 86,
+  "largest_subtrees": [
+   {
+    "prefix": "b' '",
+    "extensions": 57874,
+    "share_of_keys": 0.4521
+   },
+   {
+    "prefix": "b'.'",
+    "extensions": 6136,
+    "share_of_keys": 0.0479
+   },
+   {
+    "prefix": "b'_'",
+    "extensions": 5533,
+    "share_of_keys": 0.0432
+   },
+   {
+    "prefix": "b' s'",
+    "extensions": 3105,
+    "share_of_keys": 0.0243
+   },
+   {
+    "prefix": "b' c'",
+    "extensions": 2677,
+    "share_of_keys": 0.0209
+   },
+   {
+    "prefix": "b'('",
+    "extensions": 2651,
+    "share_of_keys": 0.0207
+   },
+   {
+    "prefix": "b' \\xd0'",
+    "extensions": 2636,
+    "share_of_keys": 0.0206
+   },
+   {
+    "prefix": "b'a'",
+    "extensions": 2477,
+    "share_of_keys": 0.0194
+   },
+   {
+    "prefix": "b' p'",
+    "extensions": 2387,
+    "share_of_keys": 0.0186
+   },
+   {
+    "prefix": "b'i'",
+    "extensions": 2305,
+    "share_of_keys": 0.018
+   },
+   {
+    "prefix": "b' a'",
+    "extensions": 1946,
+    "share_of_keys": 0.0152
+   },
+   {
+    "prefix": "b'\\xe0'",
+    "extensions": 1940,
+    "share_of_keys": 0.0152
+   }
+  ],
+  "lead_byte_extensions": {
+   "0xE0": 1940,
+   "0xE1": 209,
+   "0xE2": 429,
+   "0xE3": 1071,
+   "0xE4": 373,
+   "0xE5": 1133,
+   "0xE6": 845,
+   "0xE7": 598,
+   "0xE8": 635,
+   "0xE9": 456,
+   "0xEA": 130,
+   "0xEB": 413,
+   "0xEC": 498,
+   "0xED": 186,
+   "0xEF": 294
+  },
+  "pairs_by_prefix": {
+   "bare_space": 57874,
+   "space_run": 6381,
+   "other_single_byte": 69870,
+   "latin_word_piece": 212935,
+   "other_complete": 86360,
+   "partial_utf8": 22185,
+   "cjk_word_or_char": 2438
+  },
+  "cjk_multichar_keys": 2105,
+  "cjk_multichar_with_char_prefix": 2098,
+  "merges_left_part_is_key": 1.0
+ },
+ "Qwen3-8B-Base": {
+  "tokenizer_model": "BPE",
+  "byte_fallback": false,
+  "n_merges": 151387,
+  "kind": "bytelevel",
+  "V": 151936,
+  "n_keys": 151643,
+  "n_pairs": 519106,
+  "utf8_classes": {
+   "complete": 150195,
+   "starts_continuation": 180,
+   "invalid": 13,
+   "partial_tail": 1255
+  },
+  "single_byte_keys": 256,
+  "space_initial_keys": 53021,
+  "space_initial_share": 0.3496435707549969,
+  "internal_nodes": 45399,
+  "max_chain": 86,
+  "largest_subtrees": [
+   {
+    "prefix": "b' '",
+    "extensions": 53020,
+    "share_of_keys": 0.3496
+   },
+   {
+    "prefix": "b'\\xe5'",
+    "extensions": 7012,
+    "share_of_keys": 0.0462
+   },
+   {
+    "prefix": "b'.'",
+    "extensions": 6099,
+    "share_of_keys": 0.0402
+   },
+   {
+    "prefix": "b'_'",
+    "extensions": 5529,
+    "share_of_keys": 0.0365
+   },
+   {
+    "prefix": "b'\\xe6'",
+    "extensions": 5364,
+    "share_of_keys": 0.0354
+   },
+   {
+    "prefix": "b'\\xe7'",
+    "extensions": 4114,
+    "share_of_keys": 0.0271
+   },
+   {
+    "prefix": "b'\\xe8'",
+    "extensions": 3826,
+    "share_of_keys": 0.0252
+   },
+   {
+    "prefix": "b' s'",
+    "extensions": 2957,
+    "share_of_keys": 0.0195
+   },
+   {
+    "prefix": "b'\\xe0'",
+    "extensions": 2862,
+    "share_of_keys": 0.0189
+   },
+   {
+    "prefix": "b'\\xe4'",
+    "extensions": 2717,
+    "share_of_keys": 0.0179
+   },
+   {
+    "prefix": "b' c'",
+    "extensions": 2716,
+    "share_of_keys": 0.0179
+   },
+   {
+    "prefix": "b'\\xe9'",
+    "extensions": 2684,
+    "share_of_keys": 0.0177
+   }
+  ],
+  "lead_byte_extensions": {
+   "0xE0": 2862,
+   "0xE1": 1000,
+   "0xE2": 1456,
+   "0xE3": 2009,
+   "0xE4": 2717,
+   "0xE5": 7012,
+   "0xE6": 5364,
+   "0xE7": 4114,
+   "0xE8": 3826,
+   "0xE9": 2684,
+   "0xEA": 417,
+   "0xEB": 1027,
+   "0xEC": 1121,
+   "0xED": 515,
+   "0xEF": 879
+  },
+  "pairs_by_prefix": {
+   "bare_space": 53020,
+   "space_run": 5859,
+   "other_single_byte": 98367,
+   "latin_word_piece": 206460,
+   "other_complete": 84618,
+   "partial_utf8": 47563,
+   "cjk_word_or_char": 23219
+  },
+  "cjk_multichar_keys": 18246,
+  "cjk_multichar_with_char_prefix": 18246,
+  "merges_left_part_is_key": 1.0
+ },
+ "llm-jp-3-7.2b": {
+  "tokenizer_model": "Unigram",
+  "byte_fallback": true,
+  "n_merges": 0,
+  "kind": "sentencepiece",
+  "V": 99584,
+  "n_keys": 99441,
+  "n_pairs": 245534,
+  "utf8_classes": {
+   "complete": 99313,
+   "starts_continuation": 64,
+   "invalid": 13,
+   "partial_tail": 51
+  },
+  "single_byte_keys": 256,
+  "space_initial_keys": 43267,
+  "space_initial_share": 0.4351022214177251,
+  "internal_nodes": 23850,
+  "max_chain": 16,
+  "largest_subtrees": [
+   {
+    "prefix": "b' '",
+    "extensions": 43266,
+    "share_of_keys": 0.4351
+   },
+   {
+    "prefix": "b'\\xe3'",
+    "extensions": 12433,
+    "share_of_keys": 0.125
+   },
+   {
+    "prefix": "b'\\xe5'",
+    "extensions": 6225,
+    "share_of_keys": 0.0626
+   },
+   {
+    "prefix": "b'\\xe6'",
+    "extensions": 5049,
+    "share_of_keys": 0.0508
+   },
+   {
+    "prefix": "b'\\xe7'",
+    "extensions": 3891,
+    "share_of_keys": 0.0391
+   },
+   {
+    "prefix": "b'\\xe8'",
+    "extensions": 3568,
+    "share_of_keys": 0.0359
+   },
+   {
+    "prefix": "b'\\xe9'",
+    "extensions": 3450,
+    "share_of_keys": 0.0347
+   },
+   {
+    "prefix": "b'\\xe4'",
+    "extensions": 1952,
+    "share_of_keys": 0.0196
+   },
+   {
+    "prefix": "b' s'",
+    "extensions": 1116,
+    "share_of_keys": 0.0112
+   },
+   {
+    "prefix": "b'i'",
+    "extensions": 1049,
+    "share_of_keys": 0.0105
+   },
+   {
+    "prefix": "b'a'",
+    "extensions": 1038,
+    "share_of_keys": 0.0104
+   },
+   {
+    "prefix": "b' c'",
+    "extensions": 1027,
+    "share_of_keys": 0.0103
+   }
+  ],
+  "lead_byte_extensions": {
+   "0xE0": 255,
+   "0xE1": 206,
+   "0xE2": 334,
+   "0xE3": 12433,
+   "0xE4": 1952,
+   "0xE5": 6225,
+   "0xE6": 5049,
+   "0xE7": 3891,
+   "0xE8": 3568,
+   "0xE9": 3450,
+   "0xEA": 217,
+   "0xEB": 644,
+   "0xEC": 884,
+   "0xED": 359,
+   "0xEE": 2,
+   "0xEF": 931
+  },
+  "pairs_by_prefix": {
+   "bare_space": 43266,
+   "space_run": 105,
+   "other_single_byte": 55919,
+   "latin_word_piece": 69589,
+   "other_complete": 19282,
+   "cjk_word_or_char": 57373
+  },
+  "cjk_multichar_keys": 24701,
+  "cjk_multichar_with_char_prefix": 24700
+ }
+}

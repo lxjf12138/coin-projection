@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.models/
+models/
+data/c4/
+runs*/
+*.aux
+*.log
+*.out
+*.blg
+*.bbl
+.DS_Store

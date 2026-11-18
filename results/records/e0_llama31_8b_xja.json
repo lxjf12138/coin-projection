@@ -1,0 +1,1329 @@
+{
+ "tag": "llama31_8b_xja",
+ "tok_kind": "bytelevel",
+ "V": 128256,
+ "prompts": 50,
+ "dropped": 0,
+ "prompt_units": 10,
+ "machine": {
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "python": "3.12.3",
+  "torch": "2.12.1+cu130",
+  "cuda": "13.0",
+  "transformers": "5.23.0",
+  "numpy": "2.4.6",
+  "tokenizers": "0.23.3",
+  "cryptography": "42.0.5",
+  "torch_threads": 8,
+  "omp": "8",
+  "cpu_max": "2500000 100000",
+  "cpus_allowed": 208,
+  "model_files": [
+   [
+    ".gitattributes",
+    1519
+   ],
+   [
+    "LICENSE",
+    7627
+   ],
+   [
+    "README.md",
+    40883
+   ],
+   [
+    "USE_POLICY.md",
+    4691
+   ],
+   [
+    "config.json",
+    826
+   ],
+   [
+    "configuration.json",
+    73
+   ],
+   [
+    "generation_config.json",
+    185
+   ],
+   [
+    "model-00001-of-00004.safetensors",
+    4976698672
+   ],
+   [
+    "model-00002-of-00004.safetensors",
+    4999802720
+   ],
+   [
+    "model-00003-of-00004.safetensors",
+    4915916176
+   ],
+   [
+    "model-00004-of-00004.safetensors",
+    1168138808
+   ],
+   [
+    "model.safetensors.index.json",
+    23950
+   ],
+   [
+    "special_tokens_map.json",
+    73
+   ],
+   [
+    "tokenizer.json",
+    9085658
+   ],
+   [
+    "tokenizer_config.json",
+    50500
+   ]
+  ],
+  "model_digests": {
+   "config.json": "54acfad3cffe057640904ca8a1e83525e6551c70c7a04c641f5a9eda0bbf64bd",
+   "configuration.json": "f888421726665e8a84b738eed42a64875aed79de8be7daade851ac8bf4c0cef9",
+   "generation_config.json": "e645194d2dd27c86ed34a5a23f306c1a0fd79a42123c26551b7251c700a3379d",
+   "model.safetensors.index.json": "146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b",
+   "special_tokens_map.json": "462d91939dbc37178aa5a3eae7068d1990ccc92e09f288cc71f42cdf139d69cc",
+   "tokenizer.json": "76e48799b099d43365bd24ccd8ecc5aedac831718da780552f03b0a6eb4412aa",
+   "tokenizer_config.json": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+  }
+ },
+ "T": 64,
+ "temperature": 1.0,
+ "top_p": 1.0,
+ "proj": "auto",
+ "cells": [
+  {
+   "k": 16,
+   "states": 3200,
+   "H_tok": 1.9115,
+   "H_key": 1.9115,
+   "H_hom": 0.0,
+   "root": 0.804,
+   "branch": 0.1072,
+   "stop": 0.0888,
+   "mean_largest_root": 0.665,
+   "coin_budget_frac": 0.9112,
+   "syncpool_budget_frac": 0.804,
+   "shortcuts": {
+    "hub0.01": {
+     "budget_frac": 0.8232,
+     "kl_nats": 0.00027
+    },
+    "hub0.05": {
+     "budget_frac": 0.8484,
+     "kl_nats": 0.00151
+    },
+    "hub0.1": {
+     "budget_frac": 0.8658,
+     "kl_nats": 0.00336
+    },
+    "hub0.2": {
+     "budget_frac": 0.8853,
+     "kl_nats": 0.00826
+    },
+    "basic": {
+     "budget_frac": 1.1435,
+     "kl_nats": 1.00592
+    }
+   },
+   "q_hist": [
+    0.3758,
+    0.0541,
+    0.0452,
+    0.0259,
+    0.0284,
+    0.0279,
+    0.0231,
+    0.0379,
+    0.0447,
+    0.337
+   ],
+   "top_roots": [
+    [
+     " ",
+     0.085
+    ],
+    [
+     "\n",
+     0.023
+    ],
+    [
+     "の",
+     0.018
+    ],
+    [
+     "、",
+     0.015
+    ],
+    [
+     "2",
+     0.014
+    ],
+    [
+     "\\xef\\xbc",
+     0.013
+    ],
+    [
+     "　",
+     0.011
+    ],
+    [
+     ".",
+     0.011
+    ],
+    [
+     "1",
+     0.01
+    ],
+    [
+     ",",
+     0.01
+    ]
+   ],
+   "top_branch": [
+    [
+     " ",
+     0.526
+    ],
+    [
+     "\\xef\\xbc",
+     0.133
+    ],
+    [
+     "1",
+     0.032
+    ],
+    [
+     "2",
+     0.024
+    ],
+    [
+     "\\xe3\\x81",
+     0.018
+    ],
+    [
+     "-",
+     0.014
+    ],
+    [
+     "。",
+     0.012
+    ],
+    [
+     "に",
+     0.011
+    ],
+    [
+     "ー\\xe3\\x83",
+     0.011
+    ],
+    [
+     "」",
+     0.01
+    ]
+   ],
+   "top_stop": [
+    [
+     " ",
+     0.141
+    ],
+    [
+     "\\xef\\xbc",
+     0.051
+    ],
+    [
+     "。",
+     0.031
+    ],
+    [
+     ".",
+     0.029
+    ],
+    [
+     "に",
+     0.028
+    ],
+    [
+     "、",
+     0.024
+    ],
+    [
+     " a",
+     0.022
+    ],
+    [
+     "1",
+     0.016
+    ],
+    [
+     "」",
+     0.014
+    ],
+    [
+     "の",
+     0.013
+    ]
+   ],
+   "cat_root_mass": {
+    "bare_space": 0.0852,
+    "lead_byte": 0.0019,
+    "other_byte": 0.177,
+    "partial_char": 0.0449,
+    "space_word": 0.1388,
+    "word": 0.0401,
+    "cjk": 0.4284,
+    "other": 0.0837
+   },
+   "cat_branch": {
+    "bare_space": 0.5256,
+    "lead_byte": 0.0027,
+    "other_byte": 0.1107,
+    "partial_char": 0.1784,
+    "space_word": 0.0384,
+    "word": 0.005,
+    "cjk": 0.097,
+    "other": 0.0424
+   },
+   "cat_stop": {
+    "bare_space": 0.1411,
+    "lead_byte": 0.0026,
+    "other_byte": 0.1289,
+    "partial_char": 0.0833,
+    "space_word": 0.165,
+    "word": 0.0374,
+    "cjk": 0.3139,
+    "other": 0.1277
+   },
+   "noncanon_per_1k": 3.75,
+   "traj_noncanon_frac": 0.04
+  },
+  {
+   "k": 64,
+   "states": 3200,
+   "H_tok": 2.842,
+   "H_key": 2.842,
+   "H_hom": -0.0,
+   "root": 0.6927,
+   "branch": 0.2154,
+   "stop": 0.0919,
+   "mean_largest_root": 0.633,
+   "coin_budget_frac": 0.9081,
+   "syncpool_budget_frac": 0.6927,
+   "shortcuts": {
+    "hub0.01": {
+     "budget_frac": 0.7787,
+     "kl_nats": 0.0006
+    },
+    "hub0.05": {
+     "budget_frac": 0.8327,
+     "kl_nats": 0.00303
+    },
+    "hub0.1": {
+     "budget_frac": 0.8524,
+     "kl_nats": 0.00599
+    },
+    "hub0.2": {
+     "budget_frac": 0.8745,
+     "kl_nats": 0.01273
+    },
+    "basic": {
+     "budget_frac": 1.1684,
+     "kl_nats": 1.15801
+    }
+   },
+   "q_hist": [
+    0.4565,
+    0.0455,
+    0.0323,
+    0.0259,
+    0.0246,
+    0.0273,
+    0.0268,
+    0.0316,
+    0.0446,
+    0.2848
+   ],
+   "top_roots": [
+    [
+     " ",
+     0.19
+    ],
+    [
+     "\n",
+     0.022
+    ],
+    [
+     ".",
+     0.018
+    ],
+    [
+     "の",
+     0.016
+    ],
+    [
+     "　",
+     0.016
+    ],
+    [
+     ",",
+     0.013
+    ],
+    [
+     "ー",
+     0.012
+    ],
+    [
+     "、",
+     0.011
+    ],
+    [
+     "1",
+     0.01
+    ],
+    [
+     "2",
+     0.01
+    ]
+   ],
+   "top_branch": [
+    [
+     " ",
+     0.667
+    ],
+    [
+     "1",
+     0.02
+    ],
+    [
+     "\\xe3\\x81",
+     0.019
+    ],
+    [
+     "\\xef\\xbc",
+     0.018
+    ],
+    [
+     "、",
+     0.009
+    ],
+    [
+     "2",
+     0.009
+    ],
+    [
+     "\\xe9",
+     0.008
+    ],
+    [
+     "ー\\xe3\\x83",
+     0.008
+    ],
+    [
+     " a",
+     0.007
+    ],
+    [
+     "に",
+     0.007
+    ]
+   ],
+   "top_stop": [
+    [
+     " ",
+     0.133
+    ],
+    [
+     ".",
+     0.027
+    ],
+    [
+     "、",
+     0.023
+    ],
+    [
+     " a",
+     0.02
+    ],
+    [
+     "。",
+     0.019
+    ],
+    [
+     "に",
+     0.017
+    ],
+    [
+     "　",
+     0.016
+    ],
+    [
+     "の",
+     0.015
+    ],
+    [
+     "1",
+     0.015
+    ],
+    [
+     "ー",
+     0.014
+    ]
+   ],
+   "cat_root_mass": {
+    "bare_space": 0.1902,
+    "lead_byte": 0.0059,
+    "other_byte": 0.1918,
+    "partial_char": 0.0484,
+    "space_word": 0.0562,
+    "word": 0.0416,
+    "cjk": 0.3894,
+    "other": 0.0764
+   },
+   "cat_branch": {
+    "bare_space": 0.6666,
+    "lead_byte": 0.016,
+    "other_byte": 0.0915,
+    "partial_char": 0.078,
+    "space_word": 0.0447,
+    "word": 0.0069,
+    "cjk": 0.0688,
+    "other": 0.0275
+   },
+   "cat_stop": {
+    "bare_space": 0.1331,
+    "lead_byte": 0.0026,
+    "other_byte": 0.1604,
+    "partial_char": 0.0389,
+    "space_word": 0.1538,
+    "word": 0.0454,
+    "cjk": 0.3295,
+    "other": 0.1362
+   },
+   "noncanon_per_1k": 0.0,
+   "traj_noncanon_frac": 0.0
+  },
+  {
+   "k": 256,
+   "states": 3200,
+   "H_tok": 3.735,
+   "H_key": 3.735,
+   "H_hom": 0.0,
+   "root": 0.5967,
+   "branch": 0.3211,
+   "stop": 0.0822,
+   "mean_largest_root": 0.6241,
+   "coin_budget_frac": 0.9178,
+   "syncpool_budget_frac": 0.5967,
+   "shortcuts": {
+    "hub0.01": {
+     "budget_frac": 0.7683,
+     "kl_nats": 0.00076
+    },
+    "hub0.05": {
+     "budget_frac": 0.8263,
+     "kl_nats": 0.00371
+    },
+    "hub0.1": {
+     "budget_frac": 0.8577,
+     "kl_nats": 0.00776
+    },
+    "hub0.2": {
+     "budget_frac": 0.8859,
+     "kl_nats": 0.01651
+    },
+    "basic": {
+     "budget_frac": 1.17,
+     "kl_nats": 1.31834
+    }
+   },
+   "q_hist": [
+    0.5144,
+    0.0448,
+    0.0288,
+    0.0222,
+    0.0209,
+    0.0209,
+    0.0216,
+    0.027,
+    0.0366,
+    0.2628
+   ],
+   "top_roots": [
+    [
+     " ",
+     0.232
+    ],
+    [
+     "\\xe3\\x81",
+     0.038
+    ],
+    [
+     "\n",
+     0.026
+    ],
+    [
+     "\\xe3\\x83",
+     0.023
+    ],
+    [
+     ".",
+     0.015
+    ],
+    [
+     "の",
+     0.013
+    ],
+    [
+     "\\xef\\xbc",
+     0.01
+    ],
+    [
+     "2",
+     0.01
+    ],
+    [
+     ",",
+     0.01
+    ],
+    [
+     "1",
+     0.01
+    ]
+   ],
+   "top_branch": [
+    [
+     " ",
+     0.588
+    ],
+    [
+     "\\xe3\\x81",
+     0.069
+    ],
+    [
+     "\\xe3\\x83",
+     0.034
+    ],
+    [
+     "\\xef\\xbc",
+     0.013
+    ],
+    [
+     "\\xe5",
+     0.013
+    ],
+    [
+     "1",
+     0.011
+    ],
+    [
+     "\\xe3",
+     0.01
+    ],
+    [
+     " a",
+     0.009
+    ],
+    [
+     " \\xe3\\x83",
+     0.008
+    ],
+    [
+     "\\xe9",
+     0.008
+    ]
+   ],
+   "top_stop": [
+    [
+     " ",
+     0.121
+    ],
+    [
+     ".",
+     0.021
+    ],
+    [
+     "。",
+     0.021
+    ],
+    [
+     " a",
+     0.017
+    ],
+    [
+     "、",
+     0.016
+    ],
+    [
+     "1",
+     0.016
+    ],
+    [
+     "に",
+     0.014
+    ],
+    [
+     "の",
+     0.013
+    ],
+    [
+     "！",
+     0.013
+    ],
+    [
+     "で",
+     0.012
+    ]
+   ],
+   "cat_root_mass": {
+    "bare_space": 0.2324,
+    "lead_byte": 0.0341,
+    "other_byte": 0.1954,
+    "partial_char": 0.1141,
+    "space_word": 0.0203,
+    "word": 0.025,
+    "cjk": 0.3281,
+    "other": 0.0507
+   },
+   "cat_branch": {
+    "bare_space": 0.5883,
+    "lead_byte": 0.0449,
+    "other_byte": 0.0618,
+    "partial_char": 0.1732,
+    "space_word": 0.0669,
+    "word": 0.005,
+    "cjk": 0.0425,
+    "other": 0.0174
+   },
+   "cat_stop": {
+    "bare_space": 0.1206,
+    "lead_byte": 0.0039,
+    "other_byte": 0.1441,
+    "partial_char": 0.0615,
+    "space_word": 0.1867,
+    "word": 0.0496,
+    "cjk": 0.3225,
+    "other": 0.1111
+   },
+   "noncanon_per_1k": 0.938,
+   "traj_noncanon_frac": 0.02
+  },
+  {
+   "k": 1024,
+   "states": 3200,
+   "H_tok": 4.3456,
+   "H_key": 4.3456,
+   "H_hom": 0.0,
+   "root": 0.4921,
+   "branch": 0.4223,
+   "stop": 0.0856,
+   "mean_largest_root": 0.6431,
+   "coin_budget_frac": 0.9144,
+   "syncpool_budget_frac": 0.4921,
+   "shortcuts": {
+    "hub0.01": {
+     "budget_frac": 0.7435,
+     "kl_nats": 0.00116
+    },
+    "hub0.05": {
+     "budget_frac": 0.8116,
+     "kl_nats": 0.00506
+    },
+    "hub0.1": {
+     "budget_frac": 0.8467,
+     "kl_nats": 0.01024
+    },
+    "hub0.2": {
+     "budget_frac": 0.8759,
+     "kl_nats": 0.02037
+    },
+    "basic": {
+     "budget_frac": 1.1979,
+     "kl_nats": 1.57416
+    }
+   },
+   "q_hist": [
+    0.6076,
+    0.0345,
+    0.0224,
+    0.0175,
+    0.0156,
+    0.017,
+    0.0183,
+    0.0214,
+    0.0283,
+    0.2174
+   ],
+   "top_roots": [
+    [
+     " ",
+     0.264
+    ],
+    [
+     "\\xe3\\x81",
+     0.062
+    ],
+    [
+     "\\xe3",
+     0.059
+    ],
+    [
+     "\\xe3\\x83",
+     0.034
+    ],
+    [
+     "\n",
+     0.024
+    ],
+    [
+     "\\xe5",
+     0.024
+    ],
+    [
+     "\\xe3\\x82",
+     0.017
+    ],
+    [
+     ".",
+     0.016
+    ],
+    [
+     "\\xef\\xbc",
+     0.015
+    ],
+    [
+     "\\xe9",
+     0.013
+    ]
+   ],
+   "top_branch": [
+    [
+     " ",
+     0.402
+    ],
+    [
+     "\\xe3\\x81",
+     0.087
+    ],
+    [
+     "\\xe3\\x83",
+     0.051
+    ],
+    [
+     "\\xe5",
+     0.039
+    ],
+    [
+     "\\xe3",
+     0.033
+    ],
+    [
+     "\\xef\\xbc",
+     0.023
+    ],
+    [
+     "\\xe3\\x82",
+     0.021
+    ],
+    [
+     "\\xe9",
+     0.014
+    ],
+    [
+     "1",
+     0.01
+    ],
+    [
+     "\\xe6",
+     0.009
+    ]
+   ],
+   "top_stop": [
+    [
+     " ",
+     0.09
+    ],
+    [
+     ".",
+     0.017
+    ],
+    [
+     " a",
+     0.016
+    ],
+    [
+     "。",
+     0.014
+    ],
+    [
+     "の",
+     0.013
+    ],
+    [
+     "1",
+     0.013
+    ],
+    [
+     "に",
+     0.012
+    ],
+    [
+     "、",
+     0.011
+    ],
+    [
+     "で",
+     0.01
+    ],
+    [
+     "2",
+     0.009
+    ]
+   ],
+   "cat_root_mass": {
+    "bare_space": 0.2641,
+    "lead_byte": 0.1308,
+    "other_byte": 0.2115,
+    "partial_char": 0.1772,
+    "space_word": 0.0006,
+    "word": 0.0205,
+    "cjk": 0.17,
+    "other": 0.0252
+   },
+   "cat_branch": {
+    "bare_space": 0.4019,
+    "lead_byte": 0.1075,
+    "other_byte": 0.0668,
+    "partial_char": 0.236,
+    "space_word": 0.1248,
+    "word": 0.0086,
+    "cjk": 0.0374,
+    "other": 0.0171
+   },
+   "cat_stop": {
+    "bare_space": 0.0904,
+    "lead_byte": 0.0054,
+    "other_byte": 0.1437,
+    "partial_char": 0.069,
+    "space_word": 0.1856,
+    "word": 0.0498,
+    "cjk": 0.3244,
+    "other": 0.1317
+   },
+   "noncanon_per_1k": 4.062,
+   "traj_noncanon_frac": 0.08
+  },
+  {
+   "k": 4096,
+   "states": 3200,
+   "H_tok": 4.808,
+   "H_key": 4.808,
+   "H_hom": 0.0,
+   "root": 0.3625,
+   "branch": 0.5473,
+   "stop": 0.0902,
+   "mean_largest_root": 0.6783,
+   "coin_budget_frac": 0.9098,
+   "syncpool_budget_frac": 0.3625,
+   "shortcuts": {
+    "hub0.01": {
+     "budget_frac": 0.6831,
+     "kl_nats": 0.00156
+    },
+    "hub0.05": {
+     "budget_frac": 0.7754,
+     "kl_nats": 0.0069
+    },
+    "hub0.1": {
+     "budget_frac": 0.821,
+     "kl_nats": 0.01353
+    },
+    "hub0.2": {
+     "budget_frac": 0.8627,
+     "kl_nats": 0.02671
+    },
+    "basic": {
+     "budget_frac": 1.2323,
+     "kl_nats": 1.82165
+    }
+   },
+   "q_hist": [
+    0.6555,
+    0.0352,
+    0.019,
+    0.0153,
+    0.0139,
+    0.015,
+    0.0157,
+    0.0188,
+    0.0263,
+    0.1853
+   ],
+   "top_roots": [
+    [
+     " ",
+     0.309
+    ],
+    [
+     "\\xe3",
+     0.122
+    ],
+    [
+     "\\xe5",
+     0.046
+    ],
+    [
+     "\\xe3\\x81",
+     0.038
+    ],
+    [
+     "\\xe6",
+     0.028
+    ],
+    [
+     "\\xe7",
+     0.021
+    ],
+    [
+     "\n",
+     0.019
+    ],
+    [
+     "\\xe3\\x83",
+     0.018
+    ],
+    [
+     "\\xe3\\x82",
+     0.018
+    ],
+    [
+     "\\xe9",
+     0.017
+    ]
+   ],
+   "top_branch": [
+    [
+     " ",
+     0.351
+    ],
+    [
+     "\\xe3\\x81",
+     0.054
+    ],
+    [
+     "\\xe3",
+     0.047
+    ],
+    [
+     "\\xe3\\x83",
+     0.045
+    ],
+    [
+     "\\xe5",
+     0.043
+    ],
+    [
+     "\\xe3\\x82",
+     0.03
+    ],
+    [
+     "\\xe6",
+     0.026
+    ],
+    [
+     "\\xe7",
+     0.017
+    ],
+    [
+     "\\xe9",
+     0.012
+    ],
+    [
+     "\\xe8",
+     0.011
+    ]
+   ],
+   "top_stop": [
+    [
+     " ",
+     0.107
+    ],
+    [
+     ".",
+     0.019
+    ],
+    [
+     " a",
+     0.014
+    ],
+    [
+     "1",
+     0.011
+    ],
+    [
+     "に",
+     0.009
+    ],
+    [
+     "の",
+     0.009
+    ],
+    [
+     "。",
+     0.008
+    ],
+    [
+     "2",
+     0.008
+    ],
+    [
+     "、",
+     0.008
+    ],
+    [
+     "-",
+     0.007
+    ]
+   ],
+   "cat_root_mass": {
+    "bare_space": 0.309,
+    "lead_byte": 0.2708,
+    "other_byte": 0.2447,
+    "partial_char": 0.1208,
+    "space_word": 0.0,
+    "word": 0.019,
+    "cjk": 0.0309,
+    "other": 0.0048
+   },
+   "cat_branch": {
+    "bare_space": 0.3505,
+    "lead_byte": 0.1603,
+    "other_byte": 0.0796,
+    "partial_char": 0.2043,
+    "space_word": 0.1491,
+    "word": 0.0154,
+    "cjk": 0.0213,
+    "other": 0.0195
+   },
+   "cat_stop": {
+    "bare_space": 0.1072,
+    "lead_byte": 0.003,
+    "other_byte": 0.1705,
+    "partial_char": 0.0634,
+    "space_word": 0.2339,
+    "word": 0.089,
+    "cjk": 0.2342,
+    "other": 0.0987
+   },
+   "noncanon_per_1k": 4.375,
+   "traj_noncanon_frac": 0.08
+  },
+  {
+   "k": "Full",
+   "states": 3200,
+   "H_tok": 5.1544,
+   "H_key": 5.1544,
+   "H_hom": 0.0,
+   "root": 0.3165,
+   "branch": 0.5917,
+   "stop": 0.0918,
+   "mean_largest_root": 0.6833,
+   "coin_budget_frac": 0.9082,
+   "syncpool_budget_frac": 0.3165,
+   "shortcuts": {
+    "hub0.01": {
+     "budget_frac": 0.6682,
+     "kl_nats": 0.00159
+    },
+    "hub0.05": {
+     "budget_frac": 0.756,
+     "kl_nats": 0.00698
+    },
+    "hub0.1": {
+     "budget_frac": 0.8042,
+     "kl_nats": 0.01415
+    },
+    "hub0.2": {
+     "budget_frac": 0.8509,
+     "kl_nats": 0.02931
+    },
+    "basic": {
+     "budget_frac": 1.2478,
+     "kl_nats": 2.32571
+    }
+   },
+   "q_hist": [
+    0.6617,
+    0.0353,
+    0.0202,
+    0.0161,
+    0.0134,
+    0.0139,
+    0.0147,
+    0.0174,
+    0.0233,
+    0.184
+   ],
+   "top_roots": [
+    [
+     " ",
+     0.281
+    ],
+    [
+     "\\xe3",
+     0.22
+    ],
+    [
+     "\\xe5",
+     0.051
+    ],
+    [
+     "\\xe6",
+     0.039
+    ],
+    [
+     "\\xe7",
+     0.03
+    ],
+    [
+     "\\xef",
+     0.024
+    ],
+    [
+     "\\xe8",
+     0.023
+    ],
+    [
+     "\\xe9",
+     0.021
+    ],
+    [
+     ".",
+     0.019
+    ],
+    [
+     "\n",
+     0.017
+    ]
+   ],
+   "top_branch": [
+    [
+     " ",
+     0.286
+    ],
+    [
+     "\\xe3",
+     0.062
+    ],
+    [
+     "\\xe3\\x81",
+     0.061
+    ],
+    [
+     "\\xe3\\x83",
+     0.045
+    ],
+    [
+     "\\xe5",
+     0.044
+    ],
+    [
+     "\\xe6",
+     0.033
+    ],
+    [
+     "\\xe3\\x82",
+     0.032
+    ],
+    [
+     "\\xe7",
+     0.021
+    ],
+    [
+     "\\xe8",
+     0.015
+    ],
+    [
+     "\\xe9",
+     0.013
+    ]
+   ],
+   "top_stop": [
+    [
+     " ",
+     0.094
+    ],
+    [
+     ".",
+     0.023
+    ],
+    [
+     " a",
+     0.013
+    ],
+    [
+     "に",
+     0.009
+    ],
+    [
+     "1",
+     0.009
+    ],
+    [
+     "、",
+     0.009
+    ],
+    [
+     "。",
+     0.008
+    ],
+    [
+     "の",
+     0.008
+    ],
+    [
+     "-",
+     0.008
+    ],
+    [
+     "　",
+     0.007
+    ]
+   ],
+   "cat_root_mass": {
+    "bare_space": 0.2805,
+    "lead_byte": 0.4446,
+    "other_byte": 0.2749,
+    "partial_char": 0.0,
+    "space_word": 0.0,
+    "word": 0.0,
+    "cjk": 0.0,
+    "other": 0.0
+   },
+   "cat_branch": {
+    "bare_space": 0.286,
+    "lead_byte": 0.2064,
+    "other_byte": 0.0811,
+    "partial_char": 0.2249,
+    "space_word": 0.1421,
+    "word": 0.0195,
+    "cjk": 0.0198,
+    "other": 0.0201
+   },
+   "cat_stop": {
+    "bare_space": 0.0941,
+    "lead_byte": 0.0059,
+    "other_byte": 0.1637,
+    "partial_char": 0.0837,
+    "space_word": 0.2227,
+    "word": 0.08,
+    "cjk": 0.219,
+    "other": 0.131
+   },
+   "noncanon_per_1k": 1.562,
+   "traj_noncanon_frac": 0.02
+  }
+ ]
+}

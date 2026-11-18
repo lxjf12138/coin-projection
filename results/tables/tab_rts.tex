@@ -1,0 +1,16 @@
+\begin{tabular}{@{}ll ccc c cc ccc c@{}}
+\toprule
+ & & \multicolumn{3}{c}{Util$\uparrow$} & ReTokSync / & \multicolumn{2}{c}{Texts with errors (\%)} & BER & Repair & Resets & \\
+\cmidrule(lr){3-5}\cmidrule(lr){7-8}
+Lang & $k$ & Native$^\ast$ & ReTokSync & Coin & Coin & Native$^\ast$ & ReTokSync & (\%) & (\%) & /1k tok. & $D$ \\
+\midrule
+ \multirow{2}{*}{EN} & 256 & .807 & .802 & .731 & 1.10\,{\scriptsize[1.05, 1.14]} & 2 & 4 & 0.11 & 0.66 & 17.2 & .068 \\
+  & Full & .894 & .884 & .804 & 1.10\,{\scriptsize[1.07, 1.14]} & 8 & 6 & 0.10 & 0.53 & 4.4 & .046 \\
+\midrule
+ \multirow{2}{*}{ZH} & 256 & .786 & .788 & .722 & 1.09\,{\scriptsize[1.06, 1.12]} & 10 & 16 & 0.22 & 1.37 & 5.5 & .076 \\
+  & Full & .918 & .921 & .841 & 1.09\,{\scriptsize[1.06, 1.13]} & 6 & 14 & 0.14 & 0.85 & 2.7 & .027 \\
+\midrule
+ \multirow{2}{*}{JA} & 256 & .761 & .757 & .696 & 1.09\,{\scriptsize[1.05, 1.13]} & 10 & 6 & 0.04 & 0.52 & 1.4 & .0053 \\
+  & Full & .920 & .921 & .827 & 1.11\,{\scriptsize[1.07, 1.17]} & 18 & 16 & 0.14 & 0.84 & 1.9 & .0025 \\
+\bottomrule
+\end{tabular}

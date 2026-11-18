@@ -1,0 +1,620 @@
+{
+ "llama31_8b": {
+  "16": {
+   "steps": 12625,
+   "skipped_inconsistent_prefix": 175,
+   "rejected_partial": 0.0,
+   "rejected_complete": 0.00135,
+   "predicted_kl": 0.00135,
+   "stepwise_kl_measured": 0.00192,
+   "examples_complete": [
+    [
+     "anian",
+     "nya"
+    ],
+    [
+     " ",
+     " "
+    ],
+    [
+     " ",
+     " "
+    ],
+    [
+     " ",
+     " "
+    ],
+    [
+     " ",
+     " "
+    ],
+    [
+     " ",
+     " "
+    ]
+   ]
+  },
+  "64": {
+   "steps": 12663,
+   "skipped_inconsistent_prefix": 137,
+   "rejected_partial": 8e-05,
+   "rejected_complete": 0.00111,
+   "predicted_kl": 0.00119,
+   "stepwise_kl_measured": 0.00122,
+   "examples_complete": [
+    [
+     " ",
+     " "
+    ],
+    [
+     "ar",
+     "ming"
+    ],
+    [
+     " ",
+     " "
+    ],
+    [
+     " ",
+     " "
+    ],
+    [
+     " ",
+     " "
+    ],
+    [
+     " ",
+     " "
+    ]
+   ]
+  },
+  "256": {
+   "steps": 12448,
+   "skipped_inconsistent_prefix": 352,
+   "rejected_partial": 0.0,
+   "rejected_complete": 0.00104,
+   "predicted_kl": 0.00104,
+   "stepwise_kl_measured": 0.00198,
+   "examples_complete": [
+    [
+     " al",
+     "arm"
+    ],
+    [
+     "Franc",
+     "ia"
+    ],
+    [
+     " ",
+     " "
+    ],
+    [
+     " ",
+     " "
+    ],
+    [
+     " ",
+     " "
+    ],
+    [
+     " ",
+     " "
+    ]
+   ]
+  },
+  "1024": {
+   "steps": 12453,
+   "skipped_inconsistent_prefix": 347,
+   "rejected_partial": 8e-05,
+   "rejected_complete": 0.00145,
+   "predicted_kl": 0.00153,
+   "stepwise_kl_measured": 0.00425,
+   "examples_complete": [
+    [
+     "asper",
+     "i"
+    ],
+    [
+     "..",
+     ".."
+    ],
+    [
+     " al",
+     "arm"
+    ],
+    [
+     " bu",
+     "ren"
+    ],
+    [
+     " ",
+     " "
+    ],
+    [
+     " ",
+     " "
+    ]
+   ]
+  },
+  "4096": {
+   "steps": 12574,
+   "skipped_inconsistent_prefix": 226,
+   "rejected_partial": 0.00032,
+   "rejected_complete": 0.00151,
+   "predicted_kl": 0.00183,
+   "stepwise_kl_measured": 0.00426,
+   "examples_complete": [
+    [
+     " xxx",
+     "x"
+    ],
+    [
+     " al",
+     "arm"
+    ],
+    [
+     " ",
+     " "
+    ],
+    [
+     " ",
+     " "
+    ],
+    [
+     " ",
+     " "
+    ],
+    [
+     " ",
+     " "
+    ]
+   ]
+  },
+  "Full": {
+   "steps": 12581,
+   "skipped_inconsistent_prefix": 219,
+   "rejected_partial": 0.0,
+   "rejected_complete": 0.00207,
+   "predicted_kl": 0.00207,
+   "stepwise_kl_measured": null,
+   "examples_complete": [
+    [
+     "”",
+     ".jpg"
+    ],
+    [
+     " al",
+     "arm"
+    ],
+    [
+     " ",
+     " "
+    ],
+    [
+     " ",
+     " "
+    ],
+    [
+     "  ",
+     " "
+    ],
+    [
+     " ",
+     " "
+    ]
+   ]
+  }
+ },
+ "qwen3_8b_base": {
+  "16": {
+   "steps": 12239,
+   "skipped_inconsistent_prefix": 563,
+   "rejected_partial": 0.01315,
+   "rejected_complete": 0.00335,
+   "predicted_kl": 0.01664,
+   "stepwise_kl_measured": 0.02629,
+   "examples_complete": [
+    [
+     "\n",
+     " \n"
+    ],
+    [
+     "领域的",
+     "企业和"
+    ],
+    [
+     "　",
+     "　"
+    ],
+    [
+     "　",
+     "　"
+    ],
+    [
+     "　",
+     "　"
+    ],
+    [
+     "　",
+     "　"
+    ]
+   ]
+  },
+  "64": {
+   "steps": 12149,
+   "skipped_inconsistent_prefix": 652,
+   "rejected_partial": 0.01844,
+   "rejected_complete": 0.00247,
+   "predicted_kl": 0.02113,
+   "stepwise_kl_measured": 0.02058,
+   "examples_complete": [
+    [
+     "   ",
+     " "
+    ],
+    [
+     "　",
+     "　"
+    ],
+    [
+     "　",
+     "　"
+    ],
+    [
+     "　",
+     "　"
+    ],
+    [
+     "哪家好",
+     "莱"
+    ],
+    [
+     "河北省",
+     "政府"
+    ]
+   ]
+  },
+  "256": {
+   "steps": 11791,
+   "skipped_inconsistent_prefix": 1012,
+   "rejected_partial": 0.01696,
+   "rejected_complete": 0.00271,
+   "predicted_kl": 0.01987,
+   "stepwise_kl_measured": 0.02901,
+   "examples_complete": [
+    [
+     "大量的",
+     "人类"
+    ],
+    [
+     "尼",
+     "斯坦"
+    ],
+    [
+     "做好",
+     "数字化"
+    ],
+    [
+     "　",
+     "　"
+    ],
+    [
+     "生活",
+     "质量"
+    ],
+    [
+     "　",
+     "　"
+    ]
+   ]
+  },
+  "1024": {
+   "steps": 11550,
+   "skipped_inconsistent_prefix": 1250,
+   "rejected_partial": 0.01299,
+   "rejected_complete": 0.00398,
+   "predicted_kl": 0.01712,
+   "stepwise_kl_measured": 0.02431,
+   "examples_complete": [
+    [
+     "接",
+     "着"
+    ],
+    [
+     " ",
+     " "
+    ],
+    [
+     "理",
+     "解"
+    ],
+    [
+     "正确",
+     "认识到"
+    ],
+    [
+     "   ",
+     " "
+    ],
+    [
+     "   ",
+     " "
+    ]
+   ]
+  },
+  "4096": {
+   "steps": 11404,
+   "skipped_inconsistent_prefix": 1396,
+   "rejected_partial": 0.01824,
+   "rejected_complete": 0.00228,
+   "predicted_kl": 0.02073,
+   "stepwise_kl_measured": 0.02182,
+   "examples_complete": [
+    [
+     "使",
+     "我院"
+    ],
+    [
+     "至",
+     "上"
+    ],
+    [
+     "行业的",
+     "新业态"
+    ],
+    [
+     "面对面",
+     "对话"
+    ],
+    [
+     "即",
+     "可"
+    ],
+    [
+     "　",
+     "　"
+    ]
+   ]
+  },
+  "Full": {
+   "steps": 11631,
+   "skipped_inconsistent_prefix": 1172,
+   "rejected_partial": 0.01616,
+   "rejected_complete": 0.00241,
+   "predicted_kl": 0.01875,
+   "stepwise_kl_measured": null,
+   "examples_complete": [
+    [
+     "　",
+     "　"
+    ],
+    [
+     "　",
+     "　"
+    ],
+    [
+     "从来不",
+     "敢"
+    ],
+    [
+     "       ",
+     " "
+    ],
+    [
+     "乐",
+     "意"
+    ],
+    [
+     "包含了",
+     "许多"
+    ]
+   ]
+  }
+ },
+ "llmjp3_7p2b": {
+  "16": {
+   "steps": 12323,
+   "skipped_inconsistent_prefix": 477,
+   "rejected_partial": 0.00154,
+   "rejected_complete": 0.00049,
+   "predicted_kl": 0.00203,
+   "stepwise_kl_measured": 0.00286,
+   "examples_complete": [
+    [
+     "読",
+     "まれて"
+    ],
+    [
+     "ものの、",
+     "『"
+    ],
+    [
+     "秋",
+     "色"
+    ],
+    [
+     "名",
+     "著"
+    ],
+    [
+     "####",
+     "##"
+    ],
+    [
+     "00",
+     "0"
+    ]
+   ]
+  },
+  "64": {
+   "steps": 12455,
+   "skipped_inconsistent_prefix": 345,
+   "rejected_partial": 0.00257,
+   "rejected_complete": 0.00048,
+   "predicted_kl": 0.00306,
+   "stepwise_kl_measured": 0.00215,
+   "examples_complete": [
+    [
+     "90",
+     "01"
+    ],
+    [
+     " Thai",
+     "land"
+    ],
+    [
+     " アル",
+     "ク"
+    ],
+    [
+     "tr",
+     "eness"
+    ],
+    [
+     "３５",
+     "５"
+    ],
+    [
+     "00",
+     "0"
+    ]
+   ]
+  },
+  "256": {
+   "steps": 11952,
+   "skipped_inconsistent_prefix": 848,
+   "rejected_partial": 0.00109,
+   "rejected_complete": 0.00084,
+   "predicted_kl": 0.00193,
+   "stepwise_kl_measured": 0.00271,
+   "examples_complete": [
+    [
+     "暖か",
+     "さを"
+    ],
+    [
+     "ス",
+     "テン"
+    ],
+    [
+     "、、、",
+     "、"
+    ],
+    [
+     "……",
+     "…"
+    ],
+    [
+     "分け",
+     "て"
+    ],
+    [
+     "00",
+     "0"
+    ]
+   ]
+  },
+  "1024": {
+   "steps": 12140,
+   "skipped_inconsistent_prefix": 660,
+   "rejected_partial": 0.00033,
+   "rejected_complete": 0.00091,
+   "predicted_kl": 0.00124,
+   "stepwise_kl_measured": 0.00213,
+   "examples_complete": [
+    [
+     "CA",
+     "PE"
+    ],
+    [
+     " リ",
+     "ペアリング"
+    ],
+    [
+     "切れ",
+     "るか"
+    ],
+    [
+     "22",
+     "2"
+    ],
+    [
+     "東京",
+     "都"
+    ],
+    [
+     "----------------",
+     "------"
+    ]
+   ]
+  },
+  "4096": {
+   "steps": 11205,
+   "skipped_inconsistent_prefix": 1595,
+   "rejected_partial": 0.00071,
+   "rejected_complete": 0.0017,
+   "predicted_kl": 0.00241,
+   "stepwise_kl_measured": 0.00302,
+   "examples_complete": [
+    [
+     "ときは",
+     "ありません"
+    ],
+    [
+     " ME",
+     "M"
+    ],
+    [
+     "00",
+     "0"
+    ],
+    [
+     "79",
+     "7"
+    ],
+    [
+     "........",
+     ".."
+    ],
+    [
+     "され",
+     "ば、"
+    ]
+   ]
+  },
+  "Full": {
+   "steps": 11364,
+   "skipped_inconsistent_prefix": 1439,
+   "rejected_partial": 0.00194,
+   "rejected_complete": 0.0015,
+   "predicted_kl": 0.00344,
+   "stepwise_kl_measured": null,
+   "examples_complete": [
+    [
+     "ogg",
+     "yes"
+    ],
+    [
+     "Ｍ",
+     "Ｔ"
+    ],
+    [
+     "........",
+     ".."
+    ],
+    [
+     " 守",
+     "山"
+    ],
+    [
+     "22",
+     "2"
+    ],
+    [
+     "かが",
+     "た"
+    ]
+   ]
+  }
+ }
+}

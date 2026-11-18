@@ -1,0 +1,1317 @@
+{
+ "tag": "llmjp3_7p2b_xen",
+ "tok_kind": "sentencepiece",
+ "V": 99584,
+ "prompts": 50,
+ "dropped": 0,
+ "prompt_units": 10,
+ "machine": {
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "python": "3.12.3",
+  "torch": "2.12.1+cu130",
+  "cuda": "13.0",
+  "transformers": "5.23.0",
+  "numpy": "2.4.6",
+  "tokenizers": "0.23.3",
+  "cryptography": "42.0.5",
+  "torch_threads": 8,
+  "omp": "8",
+  "cpu_max": "2500000 100000",
+  "cpus_allowed": 208,
+  "model_files": [
+   [
+    ".gitattributes",
+    2286
+   ],
+   [
+    "README.md",
+    8849
+   ],
+   [
+    "config.json",
+    684
+   ],
+   [
+    "configuration.json",
+    73
+   ],
+   [
+    "generation_config.json",
+    111
+   ],
+   [
+    "model-00001-of-00003.safetensors",
+    4997688080
+   ],
+   [
+    "model-00002-of-00003.safetensors",
+    4947390888
+   ],
+   [
+    "model-00003-of-00003.safetensors",
+    4639082384
+   ],
+   [
+    "model.safetensors.index.json",
+    23950
+   ],
+   [
+    "special_tokens_map.json",
+    237
+   ],
+   [
+    "tokenizer.json",
+    6416433
+   ],
+   [
+    "tokenizer_config.json",
+    494
+   ]
+  ],
+  "model_digests": {
+   "config.json": "7e3ea610251ac0e72fdd75f71d1196ff1a219976882c36ffeb7fb740c53e4a16",
+   "configuration.json": "f888421726665e8a84b738eed42a64875aed79de8be7daade851ac8bf4c0cef9",
+   "generation_config.json": "e4c7d15deb9cdc781875c915f12b70feefeb4c087a358e582a9c96b9b1cad74a",
+   "model.safetensors.index.json": "760c4af887b72267ee6b9362798e173c523b0dd266a28b945d51ac2b2dccddc5",
+   "special_tokens_map.json": "f60631bdd138eb0c7db3d306fcf5e475a22d808fa2e2b2ad98cc32d17281194b",
+   "tokenizer.json": "955dc1fa623fab38cc92a3f4ee172423ae6d73201c4207569bfdf5626bc733f0",
+   "tokenizer_config.json": "1b457c73c2b6b683cbea24d883f7e5fa56fdd70b7cbf2fc8f42c0fd8de54c7a9"
+  }
+ },
+ "T": 64,
+ "temperature": 1.0,
+ "top_p": 1.0,
+ "proj": "auto",
+ "cells": [
+  {
+   "k": 16,
+   "states": 3200,
+   "H_tok": 2.2059,
+   "H_key": 2.2059,
+   "H_hom": 0.0,
+   "root": 0.9005,
+   "branch": 0.0421,
+   "stop": 0.0574,
+   "mean_largest_root": 0.5665,
+   "coin_budget_frac": 0.9426,
+   "syncpool_budget_frac": 0.9005,
+   "shortcuts": {
+    "hub0.01": {
+     "budget_frac": 0.9062,
+     "kl_nats": 0.00016
+    },
+    "hub0.05": {
+     "budget_frac": 0.9235,
+     "kl_nats": 0.00115
+    },
+    "hub0.1": {
+     "budget_frac": 0.9296,
+     "kl_nats": 0.0024
+    },
+    "hub0.2": {
+     "budget_frac": 0.9351,
+     "kl_nats": 0.00569
+    },
+    "basic": {
+     "budget_frac": 1.0316,
+     "kl_nats": 0.60067
+    }
+   },
+   "q_hist": [
+    0.392,
+    0.0545,
+    0.0312,
+    0.0253,
+    0.0269,
+    0.0336,
+    0.0337,
+    0.0463,
+    0.0545,
+    0.3019
+   ],
+   "top_roots": [
+    [
+     " ",
+     0.051
+    ],
+    [
+     ".",
+     0.041
+    ],
+    [
+     " the",
+     0.039
+    ],
+    [
+     " a",
+     0.034
+    ],
+    [
+     "\n",
+     0.026
+    ],
+    [
+     ",",
+     0.025
+    ],
+    [
+     " to",
+     0.025
+    ],
+    [
+     " and",
+     0.017
+    ],
+    [
+     " of",
+     0.016
+    ],
+    [
+     " in",
+     0.015
+    ]
+   ],
+   "top_branch": [
+    [
+     " ",
+     0.637
+    ],
+    [
+     " a",
+     0.091
+    ],
+    [
+     " 1",
+     0.023
+    ],
+    [
+     " the",
+     0.021
+    ],
+    [
+     "I",
+     0.018
+    ],
+    [
+     " I",
+     0.017
+    ],
+    [
+     " 2",
+     0.013
+    ],
+    [
+     " U",
+     0.01
+    ],
+    [
+     "s",
+     0.01
+    ],
+    [
+     " s",
+     0.01
+    ]
+   ],
+   "top_stop": [
+    [
+     " a",
+     0.156
+    ],
+    [
+     " ",
+     0.081
+    ],
+    [
+     " the",
+     0.068
+    ],
+    [
+     "  ",
+     0.032
+    ],
+    [
+     "s",
+     0.029
+    ],
+    [
+     " I",
+     0.027
+    ],
+    [
+     "I",
+     0.023
+    ],
+    [
+     " The",
+     0.02
+    ],
+    [
+     " 20",
+     0.017
+    ],
+    [
+     "   ",
+     0.016
+    ]
+   ],
+   "cat_root_mass": {
+    "bare_space": 0.0515,
+    "lead_byte": 0.0002,
+    "other_byte": 0.1646,
+    "partial_char": 0.0,
+    "space_word": 0.679,
+    "word": 0.063,
+    "cjk": 0.0,
+    "other": 0.0416
+   },
+   "cat_branch": {
+    "bare_space": 0.6368,
+    "lead_byte": 0.0,
+    "other_byte": 0.0714,
+    "partial_char": 0.0,
+    "space_word": 0.2229,
+    "word": 0.0238,
+    "cjk": 0.0,
+    "other": 0.045
+   },
+   "cat_stop": {
+    "bare_space": 0.0808,
+    "lead_byte": 0.0001,
+    "other_byte": 0.1147,
+    "partial_char": 0.0,
+    "space_word": 0.6272,
+    "word": 0.0607,
+    "cjk": 0.0,
+    "other": 0.1165
+   },
+   "noncanon_per_1k": 1.875,
+   "traj_noncanon_frac": 0.02
+  },
+  {
+   "k": 64,
+   "states": 3200,
+   "H_tok": 2.7817,
+   "H_key": 2.7817,
+   "H_hom": 0.0,
+   "root": 0.772,
+   "branch": 0.1635,
+   "stop": 0.0645,
+   "mean_largest_root": 0.5874,
+   "coin_budget_frac": 0.9355,
+   "syncpool_budget_frac": 0.772,
+   "shortcuts": {
+    "hub0.01": {
+     "budget_frac": 0.8666,
+     "kl_nats": 0.0006
+    },
+    "hub0.05": {
+     "budget_frac": 0.9034,
+     "kl_nats": 0.00244
+    },
+    "hub0.1": {
+     "budget_frac": 0.9129,
+     "kl_nats": 0.00479
+    },
+    "hub0.2": {
+     "budget_frac": 0.9239,
+     "kl_nats": 0.00963
+    },
+    "basic": {
+     "budget_frac": 1.0982,
+     "kl_nats": 0.96252
+    }
+   },
+   "q_hist": [
+    0.5404,
+    0.0356,
+    0.0194,
+    0.0162,
+    0.0167,
+    0.0167,
+    0.0188,
+    0.0276,
+    0.0307,
+    0.278
+   ],
+   "top_roots": [
+    [
+     " ",
+     0.142
+    ],
+    [
+     " a",
+     0.046
+    ],
+    [
+     ".",
+     0.038
+    ],
+    [
+     " the",
+     0.035
+    ],
+    [
+     ",",
+     0.031
+    ],
+    [
+     "\n",
+     0.023
+    ],
+    [
+     " in",
+     0.018
+    ],
+    [
+     " to",
+     0.014
+    ],
+    [
+     " of",
+     0.013
+    ],
+    [
+     " and",
+     0.01
+    ]
+   ],
+   "top_branch": [
+    [
+     " ",
+     0.722
+    ],
+    [
+     " a",
+     0.063
+    ],
+    [
+     " 1",
+     0.014
+    ],
+    [
+     " A",
+     0.009
+    ],
+    [
+     " 2",
+     0.008
+    ],
+    [
+     " the",
+     0.008
+    ],
+    [
+     " s",
+     0.008
+    ],
+    [
+     "1",
+     0.008
+    ],
+    [
+     " t",
+     0.006
+    ],
+    [
+     " S",
+     0.005
+    ]
+   ],
+   "top_stop": [
+    [
+     " a",
+     0.131
+    ],
+    [
+     " ",
+     0.067
+    ],
+    [
+     " the",
+     0.058
+    ],
+    [
+     " in",
+     0.021
+    ],
+    [
+     "s",
+     0.02
+    ],
+    [
+     ")",
+     0.016
+    ],
+    [
+     "  ",
+     0.015
+    ],
+    [
+     " The",
+     0.013
+    ],
+    [
+     "    ",
+     0.011
+    ],
+    [
+     " you",
+     0.011
+    ]
+   ],
+   "cat_root_mass": {
+    "bare_space": 0.1423,
+    "lead_byte": 0.0001,
+    "other_byte": 0.2069,
+    "partial_char": 0.0,
+    "space_word": 0.5775,
+    "word": 0.0451,
+    "cjk": 0.0,
+    "other": 0.0282
+   },
+   "cat_branch": {
+    "bare_space": 0.7217,
+    "lead_byte": 0.0001,
+    "other_byte": 0.0554,
+    "partial_char": 0.0,
+    "space_word": 0.179,
+    "word": 0.0115,
+    "cjk": 0.0,
+    "other": 0.0324
+   },
+   "cat_stop": {
+    "bare_space": 0.0675,
+    "lead_byte": 0.0002,
+    "other_byte": 0.1368,
+    "partial_char": 0.0,
+    "space_word": 0.6472,
+    "word": 0.0636,
+    "cjk": 0.0,
+    "other": 0.0847
+   },
+   "noncanon_per_1k": 3.438,
+   "traj_noncanon_frac": 0.02
+  },
+  {
+   "k": 256,
+   "states": 3200,
+   "H_tok": 3.2364,
+   "H_key": 3.2364,
+   "H_hom": 0.0,
+   "root": 0.4279,
+   "branch": 0.5043,
+   "stop": 0.0677,
+   "mean_largest_root": 0.7333,
+   "coin_budget_frac": 0.9323,
+   "syncpool_budget_frac": 0.4279,
+   "shortcuts": {
+    "hub0.01": {
+     "budget_frac": 0.8336,
+     "kl_nats": 0.0011
+    },
+    "hub0.05": {
+     "budget_frac": 0.8857,
+     "kl_nats": 0.00409
+    },
+    "hub0.1": {
+     "budget_frac": 0.9008,
+     "kl_nats": 0.00696
+    },
+    "hub0.2": {
+     "budget_frac": 0.9139,
+     "kl_nats": 0.01312
+    },
+    "basic": {
+     "budget_frac": 1.153,
+     "kl_nats": 1.31137
+    }
+   },
+   "q_hist": [
+    0.6694,
+    0.024,
+    0.0156,
+    0.0104,
+    0.009,
+    0.0092,
+    0.0094,
+    0.0138,
+    0.0192,
+    0.22
+   ],
+   "top_roots": [
+    [
+     " ",
+     0.46
+    ],
+    [
+     ".",
+     0.037
+    ],
+    [
+     ",",
+     0.033
+    ],
+    [
+     " a",
+     0.027
+    ],
+    [
+     "\n",
+     0.02
+    ],
+    [
+     " the",
+     0.011
+    ],
+    [
+     "s",
+     0.01
+    ],
+    [
+     "a",
+     0.01
+    ],
+    [
+     "e",
+     0.01
+    ],
+    [
+     "i",
+     0.009
+    ]
+   ],
+   "top_branch": [
+    [
+     " ",
+     0.777
+    ],
+    [
+     " a",
+     0.031
+    ],
+    [
+     " t",
+     0.009
+    ],
+    [
+     " s",
+     0.007
+    ],
+    [
+     " p",
+     0.007
+    ],
+    [
+     " A",
+     0.006
+    ],
+    [
+     " S",
+     0.006
+    ],
+    [
+     " c",
+     0.005
+    ],
+    [
+     " re",
+     0.005
+    ],
+    [
+     " T",
+     0.005
+    ]
+   ],
+   "top_stop": [
+    [
+     " a",
+     0.087
+    ],
+    [
+     " ",
+     0.054
+    ],
+    [
+     " the",
+     0.038
+    ],
+    [
+     " in",
+     0.022
+    ],
+    [
+     "s",
+     0.018
+    ],
+    [
+     " A",
+     0.013
+    ],
+    [
+     " I",
+     0.012
+    ],
+    [
+     ".",
+     0.012
+    ],
+    [
+     ")",
+     0.012
+    ],
+    [
+     " The",
+     0.01
+    ]
+   ],
+   "cat_root_mass": {
+    "bare_space": 0.4598,
+    "lead_byte": 0.0008,
+    "other_byte": 0.2505,
+    "partial_char": 0.0,
+    "space_word": 0.2431,
+    "word": 0.0342,
+    "cjk": 0.0001,
+    "other": 0.0115
+   },
+   "cat_branch": {
+    "bare_space": 0.777,
+    "lead_byte": 0.0001,
+    "other_byte": 0.0333,
+    "partial_char": 0.0,
+    "space_word": 0.1723,
+    "word": 0.0078,
+    "cjk": 0.0,
+    "other": 0.0095
+   },
+   "cat_stop": {
+    "bare_space": 0.0541,
+    "lead_byte": 0.0002,
+    "other_byte": 0.1464,
+    "partial_char": 0.0,
+    "space_word": 0.6603,
+    "word": 0.0793,
+    "cjk": 0.0,
+    "other": 0.0597
+   },
+   "noncanon_per_1k": 1.25,
+   "traj_noncanon_frac": 0.02
+  },
+  {
+   "k": 1024,
+   "states": 3200,
+   "H_tok": 3.6467,
+   "H_key": 3.6467,
+   "H_hom": 0.0,
+   "root": 0.175,
+   "branch": 0.7508,
+   "stop": 0.0742,
+   "mean_largest_root": 0.8618,
+   "coin_budget_frac": 0.9258,
+   "syncpool_budget_frac": 0.175,
+   "shortcuts": {
+    "hub0.01": {
+     "budget_frac": 0.8085,
+     "kl_nats": 0.00155
+    },
+    "hub0.05": {
+     "budget_frac": 0.8659,
+     "kl_nats": 0.00519
+    },
+    "hub0.1": {
+     "budget_frac": 0.8845,
+     "kl_nats": 0.00911
+    },
+    "hub0.2": {
+     "budget_frac": 0.9002,
+     "kl_nats": 0.01669
+    },
+    "basic": {
+     "budget_frac": 1.1927,
+     "kl_nats": 1.58154
+    }
+   },
+   "q_hist": [
+    0.7287,
+    0.0197,
+    0.0121,
+    0.0086,
+    0.0076,
+    0.0083,
+    0.0079,
+    0.011,
+    0.0151,
+    0.1809
+   ],
+   "top_roots": [
+    [
+     " ",
+     0.685
+    ],
+    [
+     ".",
+     0.037
+    ],
+    [
+     ",",
+     0.032
+    ],
+    [
+     "\n",
+     0.02
+    ],
+    [
+     "i",
+     0.016
+    ],
+    [
+     "s",
+     0.012
+    ],
+    [
+     "a",
+     0.009
+    ],
+    [
+     "\\xe2",
+     0.007
+    ],
+    [
+     "-",
+     0.006
+    ],
+    [
+     "\\x96",
+     0.006
+    ]
+   ],
+   "top_branch": [
+    [
+     " ",
+     0.708
+    ],
+    [
+     " a",
+     0.024
+    ],
+    [
+     " s",
+     0.021
+    ],
+    [
+     " t",
+     0.018
+    ],
+    [
+     " p",
+     0.012
+    ],
+    [
+     " c",
+     0.011
+    ],
+    [
+     " w",
+     0.009
+    ],
+    [
+     " f",
+     0.008
+    ],
+    [
+     " m",
+     0.008
+    ],
+    [
+     " b",
+     0.008
+    ]
+   ],
+   "top_stop": [
+    [
+     " a",
+     0.08
+    ],
+    [
+     " ",
+     0.042
+    ],
+    [
+     " the",
+     0.041
+    ],
+    [
+     " in",
+     0.017
+    ],
+    [
+     "s",
+     0.014
+    ],
+    [
+     ")",
+     0.012
+    ],
+    [
+     ".",
+     0.012
+    ],
+    [
+     " I",
+     0.012
+    ],
+    [
+     " on",
+     0.01
+    ],
+    [
+     "  ",
+     0.01
+    ]
+   ],
+   "cat_root_mass": {
+    "bare_space": 0.6853,
+    "lead_byte": 0.0072,
+    "other_byte": 0.2607,
+    "partial_char": 0.0,
+    "space_word": 0.0208,
+    "word": 0.0182,
+    "cjk": 0.0,
+    "other": 0.0077
+   },
+   "cat_branch": {
+    "bare_space": 0.7079,
+    "lead_byte": 0.0002,
+    "other_byte": 0.0232,
+    "partial_char": 0.0,
+    "space_word": 0.2536,
+    "word": 0.0075,
+    "cjk": 0.0,
+    "other": 0.0075
+   },
+   "cat_stop": {
+    "bare_space": 0.0424,
+    "lead_byte": 0.0011,
+    "other_byte": 0.1213,
+    "partial_char": 0.0,
+    "space_word": 0.6871,
+    "word": 0.0789,
+    "cjk": 0.0,
+    "other": 0.0691
+   },
+   "noncanon_per_1k": 5.938,
+   "traj_noncanon_frac": 0.08
+  },
+  {
+   "k": 4096,
+   "states": 3200,
+   "H_tok": 3.6763,
+   "H_key": 3.6763,
+   "H_hom": 0.0,
+   "root": 0.1737,
+   "branch": 0.7511,
+   "stop": 0.0752,
+   "mean_largest_root": 0.862,
+   "coin_budget_frac": 0.9248,
+   "syncpool_budget_frac": 0.1737,
+   "shortcuts": {
+    "hub0.01": {
+     "budget_frac": 0.7881,
+     "kl_nats": 0.00175
+    },
+    "hub0.05": {
+     "budget_frac": 0.8528,
+     "kl_nats": 0.00595
+    },
+    "hub0.1": {
+     "budget_frac": 0.8775,
+     "kl_nats": 0.01036
+    },
+    "hub0.2": {
+     "budget_frac": 0.897,
+     "kl_nats": 0.01878
+    },
+    "basic": {
+     "budget_frac": 1.202,
+     "kl_nats": 1.92873
+    }
+   },
+   "q_hist": [
+    0.7484,
+    0.0182,
+    0.0096,
+    0.0071,
+    0.0061,
+    0.0061,
+    0.0062,
+    0.0091,
+    0.0122,
+    0.177
+   ],
+   "top_roots": [
+    [
+     " ",
+     0.681
+    ],
+    [
+     ",",
+     0.036
+    ],
+    [
+     ".",
+     0.035
+    ],
+    [
+     "\n",
+     0.02
+    ],
+    [
+     "i",
+     0.019
+    ],
+    [
+     "a",
+     0.013
+    ],
+    [
+     "s",
+     0.013
+    ],
+    [
+     "-",
+     0.012
+    ],
+    [
+     "e",
+     0.007
+    ],
+    [
+     "l",
+     0.007
+    ]
+   ],
+   "top_branch": [
+    [
+     " ",
+     0.663
+    ],
+    [
+     " a",
+     0.022
+    ],
+    [
+     " s",
+     0.019
+    ],
+    [
+     " t",
+     0.014
+    ],
+    [
+     " c",
+     0.01
+    ],
+    [
+     " p",
+     0.01
+    ],
+    [
+     " o",
+     0.008
+    ],
+    [
+     " f",
+     0.008
+    ],
+    [
+     " th",
+     0.008
+    ],
+    [
+     " w",
+     0.008
+    ]
+   ],
+   "top_stop": [
+    [
+     " a",
+     0.071
+    ],
+    [
+     " the",
+     0.036
+    ],
+    [
+     " ",
+     0.035
+    ],
+    [
+     "s",
+     0.018
+    ],
+    [
+     " in",
+     0.016
+    ],
+    [
+     ".",
+     0.013
+    ],
+    [
+     " A",
+     0.009
+    ],
+    [
+     " I",
+     0.009
+    ],
+    [
+     " to",
+     0.008
+    ],
+    [
+     " an",
+     0.008
+    ]
+   ],
+   "cat_root_mass": {
+    "bare_space": 0.6805,
+    "lead_byte": 0.0109,
+    "other_byte": 0.2845,
+    "partial_char": 0.0,
+    "space_word": 0.0027,
+    "word": 0.0102,
+    "cjk": 0.007,
+    "other": 0.0042
+   },
+   "cat_branch": {
+    "bare_space": 0.6626,
+    "lead_byte": 0.0045,
+    "other_byte": 0.0292,
+    "partial_char": 0.0,
+    "space_word": 0.2854,
+    "word": 0.0104,
+    "cjk": 0.0015,
+    "other": 0.0063
+   },
+   "cat_stop": {
+    "bare_space": 0.0351,
+    "lead_byte": 0.0002,
+    "other_byte": 0.1301,
+    "partial_char": 0.0,
+    "space_word": 0.6791,
+    "word": 0.0932,
+    "cjk": 0.0146,
+    "other": 0.0477
+   },
+   "noncanon_per_1k": 3.125,
+   "traj_noncanon_frac": 0.04
+  },
+  {
+   "k": "Full",
+   "states": 3200,
+   "H_tok": 3.9272,
+   "H_key": 3.9272,
+   "H_hom": 0.0,
+   "root": 0.1576,
+   "branch": 0.7646,
+   "stop": 0.0778,
+   "mean_largest_root": 0.8622,
+   "coin_budget_frac": 0.9222,
+   "syncpool_budget_frac": 0.1576,
+   "shortcuts": {
+    "hub0.01": {
+     "budget_frac": 0.7865,
+     "kl_nats": 0.00192
+    },
+    "hub0.05": {
+     "budget_frac": 0.8482,
+     "kl_nats": 0.00642
+    },
+    "hub0.1": {
+     "budget_frac": 0.8699,
+     "kl_nats": 0.01117
+    },
+    "hub0.2": {
+     "budget_frac": 0.8889,
+     "kl_nats": 0.02006
+    },
+    "basic": {
+     "budget_frac": 1.1842,
+     "kl_nats": 2.07397
+    }
+   },
+   "q_hist": [
+    0.7509,
+    0.0178,
+    0.0101,
+    0.0077,
+    0.007,
+    0.0066,
+    0.007,
+    0.0094,
+    0.0113,
+    0.1723
+   ],
+   "top_roots": [
+    [
+     " ",
+     0.703
+    ],
+    [
+     ".",
+     0.035
+    ],
+    [
+     ",",
+     0.034
+    ],
+    [
+     "\n",
+     0.018
+    ],
+    [
+     "i",
+     0.018
+    ],
+    [
+     "a",
+     0.015
+    ],
+    [
+     "s",
+     0.014
+    ],
+    [
+     "e",
+     0.009
+    ],
+    [
+     "o",
+     0.007
+    ],
+    [
+     "t",
+     0.006
+    ]
+   ],
+   "top_branch": [
+    [
+     " ",
+     0.653
+    ],
+    [
+     " a",
+     0.021
+    ],
+    [
+     " s",
+     0.018
+    ],
+    [
+     " t",
+     0.014
+    ],
+    [
+     " c",
+     0.01
+    ],
+    [
+     " p",
+     0.009
+    ],
+    [
+     " w",
+     0.008
+    ],
+    [
+     " th",
+     0.008
+    ],
+    [
+     " o",
+     0.008
+    ],
+    [
+     " f",
+     0.007
+    ]
+   ],
+   "top_stop": [
+    [
+     " a",
+     0.075
+    ],
+    [
+     " ",
+     0.037
+    ],
+    [
+     " the",
+     0.035
+    ],
+    [
+     "s",
+     0.019
+    ],
+    [
+     " in",
+     0.017
+    ],
+    [
+     " I",
+     0.011
+    ],
+    [
+     ".",
+     0.01
+    ],
+    [
+     " an",
+     0.009
+    ],
+    [
+     " A",
+     0.009
+    ],
+    [
+     " The",
+     0.007
+    ]
+   ],
+   "cat_root_mass": {
+    "bare_space": 0.7027,
+    "lead_byte": 0.0127,
+    "other_byte": 0.2846,
+    "partial_char": 0.0,
+    "space_word": 0.0,
+    "word": 0.0,
+    "cjk": 0.0,
+    "other": 0.0
+   },
+   "cat_branch": {
+    "bare_space": 0.6527,
+    "lead_byte": 0.0017,
+    "other_byte": 0.0304,
+    "partial_char": 0.0,
+    "space_word": 0.3002,
+    "word": 0.0103,
+    "cjk": 0.0004,
+    "other": 0.0043
+   },
+   "cat_stop": {
+    "bare_space": 0.0372,
+    "lead_byte": 0.0005,
+    "other_byte": 0.1217,
+    "partial_char": 0.0,
+    "space_word": 0.7007,
+    "word": 0.0849,
+    "cjk": 0.0011,
+    "other": 0.0539
+   },
+   "noncanon_per_1k": 8.75,
+   "traj_noncanon_frac": 0.12
+  }
+ ]
+}

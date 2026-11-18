@@ -1,0 +1,509 @@
+{
+ "tag": "qwen3_8b_base",
+ "tok_kind": "bytelevel",
+ "V": 151936,
+ "prompts": 50,
+ "dropped": 310,
+ "prompt_units": 200,
+ "machine": {
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "python": "3.12.3",
+  "torch": "2.12.1+cu130",
+  "cuda": "13.0",
+  "transformers": "5.23.0",
+  "numpy": "2.4.6",
+  "tokenizers": "0.23.3",
+  "cryptography": "42.0.5",
+  "torch_threads": 8,
+  "omp": "8",
+  "cpu_max": "2500000 100000",
+  "cpus_allowed": 208,
+  "model_files": [
+   [
+    ".gitattributes",
+    2127
+   ],
+   [
+    "README.md",
+    2938
+   ],
+   [
+    "config.json",
+    729
+   ],
+   [
+    "configuration.json",
+    73
+   ],
+   [
+    "generation_config.json",
+    138
+   ],
+   [
+    "merges.txt",
+    1671853
+   ],
+   [
+    "model-00001-of-00005.safetensors",
+    3996250744
+   ],
+   [
+    "model-00002-of-00005.safetensors",
+    3993160032
+   ],
+   [
+    "model-00003-of-00005.safetensors",
+    3959604768
+   ],
+   [
+    "model-00004-of-00005.safetensors",
+    3187841392
+   ],
+   [
+    "model-00005-of-00005.safetensors",
+    1244659840
+   ],
+   [
+    "model.safetensors.index.json",
+    32878
+   ],
+   [
+    "tokenizer.json",
+    7031645
+   ],
+   [
+    "tokenizer_config.json",
+    9678
+   ],
+   [
+    "vocab.json",
+    2776833
+   ]
+  ],
+  "model_digests": {
+   "config.json": "3bd01d7ad7a2e203ecbbe84e24087a51c6d2a108ee4bcc42d0016bf49564983a",
+   "configuration.json": "f888421726665e8a84b738eed42a64875aed79de8be7daade851ac8bf4c0cef9",
+   "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+   "model.safetensors.index.json": "cd39d5e44c5aadfd1954b598883aea1c4a98822a2f7723d214ef2278b7fec2e4",
+   "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+   "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+   "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  }
+ },
+ "T": 64,
+ "temperature": 1.0,
+ "top_p": 1.0,
+ "proj": "auto",
+ "cells": [
+  {
+   "k": 256,
+   "states": 3200,
+   "H_tok": 2.8956,
+   "H_key": 2.8956,
+   "H_hom": 0.0,
+   "root": 0.8499,
+   "branch": 0.0747,
+   "stop": 0.0754,
+   "mean_largest_root": 0.5814,
+   "coin_budget_frac": 0.9246,
+   "syncpool_budget_frac": 0.8499,
+   "shortcuts": {
+    "hub0.01": {
+     "budget_frac": 0.8634,
+     "kl_nats": 0.00037
+    },
+    "hub0.05": {
+     "budget_frac": 0.8722,
+     "kl_nats": 0.00164
+    },
+    "hub0.1": {
+     "budget_frac": 0.8768,
+     "kl_nats": 0.00355
+    },
+    "hub0.2": {
+     "budget_frac": 0.8939,
+     "kl_nats": 0.00948
+    },
+    "basic": {
+     "budget_frac": 1.2819,
+     "kl_nats": 1.84074
+    }
+   },
+   "q_hist": [
+    0.3402,
+    0.0436,
+    0.0269,
+    0.021,
+    0.0228,
+    0.0275,
+    0.0234,
+    0.03,
+    0.043,
+    0.4214
+   ],
+   "top_roots": [
+    [
+     " ",
+     0.036
+    ],
+    [
+     "，",
+     0.032
+    ],
+    [
+     "0",
+     0.024
+    ],
+    [
+     "1",
+     0.02
+    ],
+    [
+     "。",
+     0.017
+    ],
+    [
+     "2",
+     0.016
+    ],
+    [
+     "\n",
+     0.016
+    ],
+    [
+     "的",
+     0.016
+    ],
+    [
+     "\b",
+     0.01
+    ],
+    [
+     "3",
+     0.01
+    ]
+   ],
+   "top_branch": [
+    [
+     " ",
+     0.279
+    ],
+    [
+     " \\xe5",
+     0.059
+    ],
+    [
+     "I",
+     0.037
+    ],
+    [
+     "的",
+     0.035
+    ],
+    [
+     " \\xe6",
+     0.025
+    ],
+    [
+     "不",
+     0.022
+    ],
+    [
+     "这",
+     0.018
+    ],
+    [
+     "一",
+     0.016
+    ],
+    [
+     "U",
+     0.016
+    ],
+    [
+     "国",
+     0.011
+    ]
+   ],
+   "top_stop": [
+    [
+     " ",
+     0.072
+    ],
+    [
+     "。",
+     0.05
+    ],
+    [
+     "的",
+     0.039
+    ],
+    [
+     "，",
+     0.031
+    ],
+    [
+     "\n",
+     0.013
+    ],
+    [
+     " \\xe6",
+     0.013
+    ],
+    [
+     " \\xe5",
+     0.011
+    ],
+    [
+     "不",
+     0.009
+    ],
+    [
+     "中",
+     0.008
+    ],
+    [
+     "这",
+     0.007
+    ]
+   ],
+   "cat_root_mass": {
+    "bare_space": 0.0358,
+    "lead_byte": 0.0045,
+    "other_byte": 0.2626,
+    "partial_char": 0.0314,
+    "space_word": 0.0013,
+    "word": 0.0133,
+    "cjk": 0.5584,
+    "other": 0.0927
+   },
+   "cat_branch": {
+    "bare_space": 0.2794,
+    "lead_byte": 0.0055,
+    "other_byte": 0.142,
+    "partial_char": 0.099,
+    "space_word": 0.0168,
+    "word": 0.0144,
+    "cjk": 0.4142,
+    "other": 0.0287
+   },
+   "cat_stop": {
+    "bare_space": 0.0724,
+    "lead_byte": 0.0007,
+    "other_byte": 0.1119,
+    "partial_char": 0.0402,
+    "space_word": 0.0142,
+    "word": 0.0285,
+    "cjk": 0.6027,
+    "other": 0.1295
+   },
+   "noncanon_per_1k": 1.875,
+   "traj_noncanon_frac": 0.04
+  },
+  {
+   "k": "Full",
+   "states": 3200,
+   "H_tok": 3.6891,
+   "H_key": 3.6891,
+   "H_hom": 0.0,
+   "root": 0.4363,
+   "branch": 0.4831,
+   "stop": 0.0806,
+   "mean_largest_root": 0.6253,
+   "coin_budget_frac": 0.9194,
+   "syncpool_budget_frac": 0.4363,
+   "shortcuts": {
+    "hub0.01": {
+     "budget_frac": 0.8194,
+     "kl_nats": 0.00055
+    },
+    "hub0.05": {
+     "budget_frac": 0.8356,
+     "kl_nats": 0.00247
+    },
+    "hub0.1": {
+     "budget_frac": 0.8446,
+     "kl_nats": 0.00503
+    },
+    "hub0.2": {
+     "budget_frac": 0.8712,
+     "kl_nats": 0.01411
+    },
+    "basic": {
+     "budget_frac": 1.191,
+     "kl_nats": 2.284
+    }
+   },
+   "q_hist": [
+    0.6944,
+    0.0232,
+    0.0127,
+    0.0111,
+    0.011,
+    0.0106,
+    0.0109,
+    0.0133,
+    0.0194,
+    0.1934
+   ],
+   "top_roots": [
+    [
+     "\\xe5",
+     0.201
+    ],
+    [
+     "\\xe6",
+     0.119
+    ],
+    [
+     "\\xe7",
+     0.087
+    ],
+    [
+     "\\xe4",
+     0.087
+    ],
+    [
+     "\\xe8",
+     0.074
+    ],
+    [
+     "\\xef",
+     0.055
+    ],
+    [
+     " ",
+     0.051
+    ],
+    [
+     "\\xe9",
+     0.049
+    ],
+    [
+     "\\xe3",
+     0.027
+    ],
+    [
+     "0",
+     0.019
+    ]
+   ],
+   "top_branch": [
+    [
+     "\\xe5",
+     0.217
+    ],
+    [
+     "\\xe6",
+     0.128
+    ],
+    [
+     "\\xe7",
+     0.072
+    ],
+    [
+     "\\xe8",
+     0.063
+    ],
+    [
+     " ",
+     0.054
+    ],
+    [
+     "\\xe4",
+     0.048
+    ],
+    [
+     "\\xe9",
+     0.037
+    ],
+    [
+     "\\xe4\\xb8",
+     0.025
+    ],
+    [
+     " \\xe5",
+     0.011
+    ],
+    [
+     "\\xef\\xbc",
+     0.007
+    ]
+   ],
+   "top_stop": [
+    [
+     " ",
+     0.066
+    ],
+    [
+     "。",
+     0.036
+    ],
+    [
+     "的",
+     0.03
+    ],
+    [
+     "，",
+     0.024
+    ],
+    [
+     " \\xe6",
+     0.014
+    ],
+    [
+     " \\xe5",
+     0.013
+    ],
+    [
+     "\n",
+     0.009
+    ],
+    [
+     "不",
+     0.008
+    ],
+    [
+     "一",
+     0.008
+    ],
+    [
+     ".",
+     0.007
+    ]
+   ],
+   "cat_root_mass": {
+    "bare_space": 0.0506,
+    "lead_byte": 0.7132,
+    "other_byte": 0.2362,
+    "partial_char": 0.0,
+    "space_word": 0.0,
+    "word": 0.0,
+    "cjk": 0.0,
+    "other": 0.0
+   },
+   "cat_branch": {
+    "bare_space": 0.0535,
+    "lead_byte": 0.5716,
+    "other_byte": 0.0405,
+    "partial_char": 0.2072,
+    "space_word": 0.0104,
+    "word": 0.0056,
+    "cjk": 0.1045,
+    "other": 0.0067
+   },
+   "cat_stop": {
+    "bare_space": 0.0663,
+    "lead_byte": 0.0013,
+    "other_byte": 0.1001,
+    "partial_char": 0.0547,
+    "space_word": 0.0253,
+    "word": 0.0411,
+    "cjk": 0.6045,
+    "other": 0.1068
+   },
+   "noncanon_per_1k": 0.938,
+   "traj_noncanon_frac": 0.02
+  }
+ ]
+}

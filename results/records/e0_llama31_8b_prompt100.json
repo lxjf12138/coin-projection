@@ -1,0 +1,509 @@
+{
+ "tag": "llama31_8b",
+ "tok_kind": "bytelevel",
+ "V": 128256,
+ "prompts": 50,
+ "dropped": 246,
+ "prompt_units": 100,
+ "machine": {
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "python": "3.12.3",
+  "torch": "2.12.1+cu130",
+  "cuda": "13.0",
+  "transformers": "5.23.0",
+  "numpy": "2.4.6",
+  "tokenizers": "0.23.3",
+  "cryptography": "42.0.5",
+  "torch_threads": 8,
+  "omp": "8",
+  "cpu_max": "2500000 100000",
+  "cpus_allowed": 208,
+  "model_files": [
+   [
+    ".gitattributes",
+    1519
+   ],
+   [
+    "LICENSE",
+    7627
+   ],
+   [
+    "README.md",
+    40883
+   ],
+   [
+    "USE_POLICY.md",
+    4691
+   ],
+   [
+    "config.json",
+    826
+   ],
+   [
+    "configuration.json",
+    73
+   ],
+   [
+    "generation_config.json",
+    185
+   ],
+   [
+    "model-00001-of-00004.safetensors",
+    4976698672
+   ],
+   [
+    "model-00002-of-00004.safetensors",
+    4999802720
+   ],
+   [
+    "model-00003-of-00004.safetensors",
+    4915916176
+   ],
+   [
+    "model-00004-of-00004.safetensors",
+    1168138808
+   ],
+   [
+    "model.safetensors.index.json",
+    23950
+   ],
+   [
+    "special_tokens_map.json",
+    73
+   ],
+   [
+    "tokenizer.json",
+    9085658
+   ],
+   [
+    "tokenizer_config.json",
+    50500
+   ]
+  ],
+  "model_digests": {
+   "config.json": "54acfad3cffe057640904ca8a1e83525e6551c70c7a04c641f5a9eda0bbf64bd",
+   "configuration.json": "f888421726665e8a84b738eed42a64875aed79de8be7daade851ac8bf4c0cef9",
+   "generation_config.json": "e645194d2dd27c86ed34a5a23f306c1a0fd79a42123c26551b7251c700a3379d",
+   "model.safetensors.index.json": "146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b",
+   "special_tokens_map.json": "462d91939dbc37178aa5a3eae7068d1990ccc92e09f288cc71f42cdf139d69cc",
+   "tokenizer.json": "76e48799b099d43365bd24ccd8ecc5aedac831718da780552f03b0a6eb4412aa",
+   "tokenizer_config.json": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+  }
+ },
+ "T": 64,
+ "temperature": 1.0,
+ "top_p": 1.0,
+ "proj": "auto",
+ "cells": [
+  {
+   "k": 256,
+   "states": 3200,
+   "H_tok": 2.8732,
+   "H_key": 2.8732,
+   "H_hom": 0.0,
+   "root": 0.2899,
+   "branch": 0.6271,
+   "stop": 0.083,
+   "mean_largest_root": 0.8346,
+   "coin_budget_frac": 0.917,
+   "syncpool_budget_frac": 0.2899,
+   "shortcuts": {
+    "hub0.01": {
+     "budget_frac": 0.7779,
+     "kl_nats": 0.00119
+    },
+    "hub0.05": {
+     "budget_frac": 0.8554,
+     "kl_nats": 0.00419
+    },
+    "hub0.1": {
+     "budget_frac": 0.8812,
+     "kl_nats": 0.00748
+    },
+    "hub0.2": {
+     "budget_frac": 0.9004,
+     "kl_nats": 0.01378
+    },
+    "basic": {
+     "budget_frac": 1.2174,
+     "kl_nats": 2.05615
+    }
+   },
+   "q_hist": [
+    0.7035,
+    0.0191,
+    0.0119,
+    0.0096,
+    0.0097,
+    0.0095,
+    0.0094,
+    0.0108,
+    0.0155,
+    0.201
+   ],
+   "top_roots": [
+    [
+     " ",
+     0.635
+    ],
+    [
+     ".",
+     0.049
+    ],
+    [
+     ",",
+     0.037
+    ],
+    [
+     "-",
+     0.009
+    ],
+    [
+     " a",
+     0.008
+    ],
+    [
+     "i",
+     0.007
+    ],
+    [
+     "a",
+     0.006
+    ],
+    [
+     "1",
+     0.006
+    ],
+    [
+     "2",
+     0.005
+    ],
+    [
+     " is",
+     0.004
+    ]
+   ],
+   "top_branch": [
+    [
+     " ",
+     0.846
+    ],
+    [
+     " a",
+     0.024
+    ],
+    [
+     " A",
+     0.004
+    ],
+    [
+     " S",
+     0.004
+    ],
+    [
+     " t",
+     0.004
+    ],
+    [
+     "1",
+     0.003
+    ],
+    [
+     " s",
+     0.003
+    ],
+    [
+     " re",
+     0.003
+    ],
+    [
+     "-",
+     0.003
+    ],
+    [
+     " T",
+     0.003
+    ]
+   ],
+   "top_stop": [
+    [
+     ".",
+     0.125
+    ],
+    [
+     " ",
+     0.119
+    ],
+    [
+     " a",
+     0.091
+    ],
+    [
+     " the",
+     0.055
+    ],
+    [
+     " in",
+     0.016
+    ],
+    [
+     " you",
+     0.015
+    ],
+    [
+     " The",
+     0.01
+    ],
+    [
+     " an",
+     0.01
+    ],
+    [
+     "-",
+     0.01
+    ],
+    [
+     " I",
+     0.01
+    ]
+   ],
+   "cat_root_mass": {
+    "bare_space": 0.6351,
+    "lead_byte": 0.0003,
+    "other_byte": 0.1908,
+    "partial_char": 0.001,
+    "space_word": 0.1392,
+    "word": 0.0285,
+    "cjk": 0.0,
+    "other": 0.0051
+   },
+   "cat_branch": {
+    "bare_space": 0.8464,
+    "lead_byte": 0.0,
+    "other_byte": 0.0277,
+    "partial_char": 0.0,
+    "space_word": 0.119,
+    "word": 0.0036,
+    "cjk": 0.0,
+    "other": 0.0033
+   },
+   "cat_stop": {
+    "bare_space": 0.1195,
+    "lead_byte": 0.0,
+    "other_byte": 0.2047,
+    "partial_char": 0.0001,
+    "space_word": 0.6048,
+    "word": 0.0473,
+    "cjk": 0.0,
+    "other": 0.0236
+   },
+   "noncanon_per_1k": 1.562,
+   "traj_noncanon_frac": 0.02
+  },
+  {
+   "k": "Full",
+   "states": 3200,
+   "H_tok": 3.3466,
+   "H_key": 3.3466,
+   "H_hom": -0.0,
+   "root": 0.1277,
+   "branch": 0.7881,
+   "stop": 0.0842,
+   "mean_largest_root": 0.9023,
+   "coin_budget_frac": 0.9158,
+   "syncpool_budget_frac": 0.1277,
+   "shortcuts": {
+    "hub0.01": {
+     "budget_frac": 0.7485,
+     "kl_nats": 0.0019
+    },
+    "hub0.05": {
+     "budget_frac": 0.8437,
+     "kl_nats": 0.00589
+    },
+    "hub0.1": {
+     "budget_frac": 0.869,
+     "kl_nats": 0.00968
+    },
+    "hub0.2": {
+     "budget_frac": 0.8871,
+     "kl_nats": 0.01689
+    },
+    "basic": {
+     "budget_frac": 1.2862,
+     "kl_nats": 3.38316
+    }
+   },
+   "q_hist": [
+    0.7661,
+    0.0124,
+    0.0075,
+    0.0063,
+    0.0062,
+    0.0051,
+    0.0061,
+    0.0072,
+    0.0107,
+    0.1723
+   ],
+   "top_roots": [
+    [
+     " ",
+     0.765
+    ],
+    [
+     ".",
+     0.043
+    ],
+    [
+     ",",
+     0.035
+    ],
+    [
+     "a",
+     0.014
+    ],
+    [
+     "i",
+     0.011
+    ],
+    [
+     "-",
+     0.008
+    ],
+    [
+     "e",
+     0.008
+    ],
+    [
+     "o",
+     0.007
+    ],
+    [
+     "\\xe2",
+     0.006
+    ],
+    [
+     "l",
+     0.005
+    ]
+   ],
+   "top_branch": [
+    [
+     " ",
+     0.667
+    ],
+    [
+     " a",
+     0.021
+    ],
+    [
+     " s",
+     0.017
+    ],
+    [
+     " t",
+     0.014
+    ],
+    [
+     " c",
+     0.01
+    ],
+    [
+     " p",
+     0.009
+    ],
+    [
+     " th",
+     0.008
+    ],
+    [
+     " o",
+     0.008
+    ],
+    [
+     " w",
+     0.007
+    ],
+    [
+     " b",
+     0.007
+    ]
+   ],
+   "top_stop": [
+    [
+     " ",
+     0.095
+    ],
+    [
+     ".",
+     0.09
+    ],
+    [
+     " a",
+     0.068
+    ],
+    [
+     " the",
+     0.034
+    ],
+    [
+     " in",
+     0.015
+    ],
+    [
+     " you",
+     0.01
+    ],
+    [
+     " an",
+     0.009
+    ],
+    [
+     " I",
+     0.008
+    ],
+    [
+     " The",
+     0.008
+    ],
+    [
+     " A",
+     0.008
+    ]
+   ],
+   "cat_root_mass": {
+    "bare_space": 0.7648,
+    "lead_byte": 0.0076,
+    "other_byte": 0.2276,
+    "partial_char": 0.0,
+    "space_word": 0.0,
+    "word": 0.0,
+    "cjk": 0.0,
+    "other": 0.0
+   },
+   "cat_branch": {
+    "bare_space": 0.6666,
+    "lead_byte": 0.0003,
+    "other_byte": 0.0272,
+    "partial_char": 0.0012,
+    "space_word": 0.2927,
+    "word": 0.0092,
+    "cjk": 0.0,
+    "other": 0.0028
+   },
+   "cat_stop": {
+    "bare_space": 0.0951,
+    "lead_byte": 0.0001,
+    "other_byte": 0.1673,
+    "partial_char": 0.0002,
+    "space_word": 0.6419,
+    "word": 0.0641,
+    "cjk": 0.0,
+    "other": 0.0312
+   },
+   "noncanon_per_1k": 3.125,
+   "traj_noncanon_frac": 0.02
+  }
+ ]
+}
