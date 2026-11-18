@@ -3,7 +3,7 @@
 Code and result records for
 
 > **Optimal Single-History Tokenization Disambiguation for Provably Secure Linguistic Steganography**
-> [arXiv link]
+> [arXiv:2611.17091](https://arxiv.org/abs/2611.17091) (cs.CL, cross-listed cs.CR)
 
 Provably secure linguistic steganography hides a message in text sampled from a language model. The coders
 behind it assume that the receiver recovers the sender's tokens, but a channel carries text, and one text admits
@@ -165,7 +165,8 @@ published rule (`protocol/c4proto.py:sample_key`), so a rerun reconstructs them.
 
 ## Citation
 
-Please cite the arXiv version; the entry is on the arXiv abstract page.
+Cite the arXiv version: [arXiv:2611.17091](https://arxiv.org/abs/2611.17091). Its abstract page carries the
+author list and the exportable BibTeX entry.
 
 ## License
 
