@@ -13,17 +13,27 @@ deciding whether a token ends at a string that other candidates extend.
 This repository contains the bound, the scheme (**coin projection**), every baseline we compare, the experiment
 driver, and the analysis that turns run records into the paper's tables and figures.
 
+It is two things in one tree. The top-level directories are **code**; `results/` and `figures/` are the
+**artifacts** the code produced and the paper was built from.
+
+**Code.** These run on their own, or regenerate the artifacts below.
+
 - `protocol/` — the sender/receiver protocol (`c4proto.py`) for all methods, the coin machinery
   (`coin_core.py`), the LAS, ReTokSync and Stepwise adapters, the per-stage checks, and the driver
   `run_8b_serial.sh`.
 - `plots/` — the analysis: `make_figs.py`, `make_extra.py`, `make_rts.py` write every table and every `\res{}`
   number macro; `fig_plots.py`, `fig3_story.py`, `fig1_drawio.py` draw the figures.
 - `analysis/` — diagnostics used by stage `P` (Stepwise consistency, tokenizer origin of the entropy).
+- `tools/export_results.py` — turns a runs directory into the stripped records under `results/records/`.
+- `data/fetch_c4.py` — rebuilds the prompts.
+
+**Artifacts.** Nothing here is hand-written; [`results/README.md`](results/README.md) says what each file is.
+
 - `results/records/` — the run records behind the paper, with the C4 prompt, the generated text and the token
   ids replaced by their SHA-256 prefixes. Nothing in these files identifies a text.
 - `results/tables/` — the tables, number macros and figure data the paper was built from.
-- `figures/` — the four published figures.
-- `data/fetch_c4.py` — rebuilds the prompts.
+- `results/I_ll_call_you_this.json` — the prefix forest at the step of Figures 1 and 3.
+- `figures/` — the four published figures; `fig1_example.drawio` is the editable source of Figure 1.
 
 **Every table and number in the paper is regenerated from `results/records/` byte for byte** (see
 [Rebuild the paper's numbers](#rebuild-the-papers-numbers)). The stripped records are not a summary: they are the
