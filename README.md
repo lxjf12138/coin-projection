@@ -1,6 +1,6 @@
 # Coin projection
 
-Code and result records for
+Code, run records and analysis for
 
 > **Optimal Single-History Tokenization Disambiguation for Provably Secure Linguistic Steganography**
 > [arXiv:2611.17091](https://arxiv.org/abs/2611.17091) (cs.CL, cross-listed cs.CR)
@@ -10,44 +10,33 @@ behind it assume that the receiver recovers the sender's tokens, but a channel c
 many tokenizations. Schemes that keep a single token history pay for this in **stop entropy**: the entropy of
 deciding whether a token ends at a string that other candidates extend.
 
-This repository contains the bound, the scheme (**coin projection**), every baseline we compare, the experiment
-driver, and the analysis that turns run records into the paper's tables and figures.
-
-It is two things in one tree. The top-level directories are **code**; `results/` and `figures/` are the
-**artifacts** the code produced and the paper was built from.
-
-**Code.** These run on their own, or regenerate the artifacts below.
+This repository has the bound, the scheme (coin projection), every baseline we compare against, the driver that
+produced the runs, and the analysis that turns those runs into the paper's tables and figures. The top-level
+directories are code:
 
 - `protocol/` — the sender/receiver protocol (`c4proto.py`) for all methods, the coin machinery
-  (`coin_core.py`), the LAS, ReTokSync and Stepwise adapters, the per-stage checks, and the driver
+  (`coin_core.py`), the adapters for LAS, ReTokSync and Stepwise, the per-stage checks, and the driver
   `run_8b_serial.sh`.
-- `plots/` — the analysis: `make_figs.py`, `make_extra.py`, `make_rts.py` write every table and every `\res{}`
-  number macro; `fig_plots.py`, `fig3_story.py`, `fig1_drawio.py` draw the figures.
-- `analysis/` — diagnostics used by stage `P` (Stepwise consistency, tokenizer origin of the entropy).
-- `tools/export_results.py` — turns a runs directory into the stripped records under `results/records/`.
+- `plots/` — `make_figs.py`, `make_extra.py` and `make_rts.py` write every table and every `\res{}` number
+  macro; `fig_plots.py`, `fig3_story.py` and `fig1_drawio.py` draw the figures.
+- `analysis/` — diagnostics for stage `P`: Stepwise consistency and the tokenizer origin of the entropy.
+- `tools/export_results.py` — turns a runs directory into the stripped records in `results/records/`.
 - `data/fetch_c4.py` — rebuilds the prompts.
 
-**Artifacts.** Nothing here is hand-written; [`results/README.md`](results/README.md) says what each file is.
-
-- `results/records/` — the run records behind the paper, with the C4 prompt, the generated text and the token
-  ids replaced by their SHA-256 prefixes. Nothing in these files identifies a text.
-- `results/tables/` — the tables, number macros and figure data the paper was built from.
-- `results/I_ll_call_you_this.json` — the prefix forest at the step of Figures 1 and 3.
-- `figures/` — the four published figures; `fig1_example.drawio` is the editable source of Figure 1.
-
-**Every table and number in the paper is regenerated from `results/records/` byte for byte** (see
-[Rebuild the paper's numbers](#rebuild-the-papers-numbers)). The stripped records are not a summary: they are the
-same records the driver writes, minus the three text fields, and `plots/` reads them unchanged.
+`results/` and `figures/` are what that code produced: the run records, the tables and figure data the paper was
+built from, the prefix forest at the step of Figures 1 and 3 (`results/I_ll_call_you_this.json`), and the four
+published figures (`fig1_example.drawio` is the editable source of Figure 1). [results/README.md](results/README.md)
+says what each file is.
 
 ## Requirements
 
-One NVIDIA GPU (we used one RTX 5090) with 8B models in bf16.
+One NVIDIA GPU; we used one RTX 5090 with the 8B models in bf16.
 
 - Python 3.12, `pip install -r requirements.txt` (torch 2.12 / transformers 5.23, CUDA 13 build).
 - About 20 GB of disk for the three models, plus the C4 prompt files and the run records.
 
-Bit-exact agreement between sender and receiver assumes the same software stack on both sides. Across different
-GPUs or library versions, zero error still holds (both ends move together), but bits per token and utilization
+Bit-exact agreement between sender and receiver assumes the same software stack at both ends. On a different GPU
+or library version the two ends still move together, so zero error holds, but bits per token and utilization
 reproduce only statistically.
 
 ## Models
@@ -74,14 +63,13 @@ python data/fetch_c4.py --lang ja
 ```
 
 This is the first 1000 documents of each configuration at dataset revision `1588ec4` (the default of
-`--revision`), the same source and the same truncation rule as
-Stepwise: the prompt is the first 10 words for English and the first 10 characters for Chinese and Japanese, and
-prompts containing U+FFFD are dropped deterministically (11 of 1000 in the Chinese shard, none otherwise; the
-count is recorded in every output file).
+`--revision`), the same source and the same truncation rule as Stepwise: the prompt is the first 10 words for
+English and the first 10 characters for Chinese and Japanese, and prompts containing U+FFFD are dropped
+deterministically (11 of 1000 in the Chinese shard, none otherwise; the count is recorded in every output file).
 
 ## External baselines
 
-Two baselines are the authors' own code, imported at run time; we do not vendor them.
+Stepwise and LAS are the authors' own code, imported at run time rather than vendored.
 
 - **Stepwise / Consistency** — MIT, <https://github.com/ryehr/Consistency>, commit `962473d` (v0.2.0). It
   supplies the range coder used by every method and the official Basic removal rule, MWIS forest DP and
@@ -102,11 +90,11 @@ Two baselines are the authors' own code, imported at run time; we do not vendor 
 
 The remaining baselines are implemented here against the same byte-exact prefix forest: SyncPool (connected
 components of the prefix relation), hub-drop (SyncPool after deleting nodes with stop probability below 0.05),
-Basic and MWIS (which call the official Stepwise routines), and Native. **Discop** is a Python reimplementation
-of the official Cython coder from <https://github.com/comydream/provably-secure-steganography>, which ships no
-license, so none of its code is redistributed here; **ReTokSync** is implemented from its paper, whose
-repository holds no code. `protocol/retoksync_adapter.py` records every place where we had to fill a gap the
-papers leave open.
+Basic and MWIS (which call the official Stepwise routines), and Native. **Discop** is our Python
+reimplementation of the official Cython coder at
+<https://github.com/comydream/provably-secure-steganography>; that repository carries no license, so nothing from
+it is copied here. **ReTokSync** is implemented from its paper, which ships no code; the gaps that paper leaves
+open are marked in `protocol/retoksync_adapter.py`.
 
 ## Quick check
 
@@ -114,15 +102,15 @@ papers leave open.
 SCALE=smoke STEPWISE_SRC=... ./protocol/run_8b_serial.sh R0
 ```
 
-`SCALE=smoke` runs every stage on the small models with a few texts each. It checks the implementation — the
-sender passes its own receivers, the sparse and dense coin paths agree, and the Stepwise equivalence holds —
-and its outputs are never paper numbers.
+`SCALE=smoke` runs every stage on the small models with a few texts each, exercising the implementation end to
+end: the sender passes its own receivers, the sparse and dense coin paths agree, and the Stepwise equivalence
+holds. Its outputs are not paper numbers.
 
 ## Reproducing the paper
 
-The driver runs strictly serially on one GPU, one job at a time, and every stage is resumable. Stages behind the
-paper's tables and figures take about **2 GPU-days** in total; the main comparison (R2+R4) is about 24 GPU-hours
-of that.
+The driver runs strictly serially on one GPU, one job at a time, and every stage is resumable. The stages behind
+the paper's tables and figures take about **2 GPU-days** in total; the main comparison (R2+R4) is about 24
+GPU-hours of that.
 
 ```bash
 export STEPWISE_SRC=.../Consistency/src LAS_RELEASE=.../stegtext-framework
@@ -170,14 +158,15 @@ python -I plots/make_extra.py  --runs results/records --out results/tables
 python -I plots/make_rts.py    --runs results/records --out results/tables
 ```
 
-This reproduces `results/tables/` exactly, including the 5,639 `\res{}` macros of `numbers.tex`, from the
-stripped records in `results/records/`. `results/records/` holds the same files, same samples and same numbers
-as the driver's output; only `prompt`, `text` and `token_ids` were replaced by `prompt_sha`, `text_sha` and
-`token_ids_sha` (`tools/export_results.py`), and the analysis falls back to the hashes.
+This rebuilds `results/tables/` from the records, including the 5,639 `\res{}` macros of `numbers.tex`, and
+reproduces the committed files exactly. The records are the driver's own output: same files, same samples, same
+numbers, with `prompt`, `text` and `token_ids` replaced by `prompt_sha`, `text_sha` and `token_ids_sha` by
+`tools/export_results.py`. Nothing else was touched, so the analysis reads them unchanged and falls back to the
+hashes where it used the text.
 
-All texts of a cell share their prompts, keys and bit streams, so the records are paired: the intervals in the
-paper are paired bootstraps over texts and can be recomputed from them. The keys themselves are derived from a
-published rule (`protocol/c4proto.py:sample_key`), so a rerun reconstructs them.
+All texts of a cell share their prompts, keys and bit streams, so the records are paired and the paper's
+intervals are paired bootstraps over texts, recomputable from them. The keys themselves come from a published
+rule (`protocol/c4proto.py:sample_key`), so a rerun reconstructs them.
 
 ## Citation
 
@@ -190,7 +179,7 @@ MIT (see `LICENSE`). The external baselines keep their own licenses.
 
 ## Ethics
 
-Steganography protects private communication, for example under censorship; it can also hide harmful content or
-leaked data from moderation. Coin projection does not make stegotext harder to detect than existing provably
-secure schemes — it matches the model's distribution exactly, as they do — it makes extraction reliable. All
-experiments use public C4 prompts and publicly released models, and involve no human subjects.
+Steganography protects private communication, for instance under censorship, and it can also hide content from
+moderation. Coin projection makes extraction from stegotext reliable; it does not make the text harder to detect
+than existing provably secure schemes, since it matches the model's distribution exactly as they do. All
+experiments use public C4 prompts and publicly released models.

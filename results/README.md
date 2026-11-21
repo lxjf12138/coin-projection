@@ -3,7 +3,7 @@
 `records/` — the run records behind the paper. Same files, samples and numbers as the driver's output
 directory, with three fields replaced by their SHA-256 prefixes (`prompt` → `prompt_sha`, `text` →
 `text_sha`, `token_ids` → `token_ids_sha`) and with recorded paths cut to their last two components;
-`tools/export_results.py` produced them. No prompt text, no generated text and no token ids remain.
+`tools/export_results.py` produced them.
 
 `tables/` — everything `plots/make_figs.py`, `plots/make_extra.py` and `plots/make_rts.py` write: the tables,
 the 5,639 number macros of `numbers.tex`, the figure data (`.dat`), and `e1_summary.csv`. These are the files the
