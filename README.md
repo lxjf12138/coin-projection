@@ -63,7 +63,8 @@ python data/fetch_c4.py --lang zh
 python data/fetch_c4.py --lang ja
 ```
 
-This is the first 1000 documents of each configuration, the same source and the same truncation rule as
+This is the first 1000 documents of each configuration at dataset revision `1588ec4` (the default of
+`--revision`), the same source and the same truncation rule as
 Stepwise: the prompt is the first 10 words for English and the first 10 characters for Chinese and Japanese, and
 prompts containing U+FFFD are dropped deterministically (11 of 1000 in the Chinese shard, none otherwise; the
 count is recorded in every output file).
@@ -81,8 +82,13 @@ Two baselines are the authors' own code, imported at run time; we do not vendor 
   export STEPWISE_SRC=$PWD/Consistency/src
   ```
 
-- **LAS** — <https://github.com/lxjf12138/stegtext-framework>, imported read-only by `protocol/las_adapter.py`
-  for stage R4 and for every method list that includes `las`. Set `export LAS_RELEASE=<clone>`.
+- **LAS** — <https://github.com/lxjf12138/stegtext-framework>, commit `041ea1b`, imported read-only by
+  `protocol/las_adapter.py` for stage R4 and for every method list that includes `las`. Set
+
+  ```bash
+  git clone https://github.com/lxjf12138/stegtext-framework && git -C stegtext-framework checkout 041ea1b
+  export LAS_RELEASE=$PWD/stegtext-framework
+  ```
 
 The remaining baselines are implemented here against the same byte-exact prefix forest: SyncPool (connected
 components of the prefix relation), hub-drop (SyncPool after deleting nodes with stop probability below 0.05),

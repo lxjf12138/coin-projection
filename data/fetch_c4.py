@@ -7,7 +7,9 @@ its prompt (the first 10 words for English, 10 characters for Chinese and
 Japanese) and drops the prompts that contain U+FFFD; it records how many it
 dropped in the meta line of every output file.
 
-Usage:  python data/fetch_c4.py --lang en [--count 1000] [--out data/c4]
+Usage:  python data/fetch_c4.py --lang en [--count 1000] [--out data/c4] [--revision SHA]
+
+The default revision is the one our prompts were drawn from.
 """
 from __future__ import annotations
 
@@ -18,6 +20,7 @@ import sys
 
 LANGS = ("en", "zh", "ja")
 DATASET = "allenai/c4"
+REVISION = "1588ec454efa1a09f29cd18ddd04fe05fc8653a2"
 
 
 def main() -> int:
@@ -25,7 +28,7 @@ def main() -> int:
     ap.add_argument("--lang", choices=LANGS, required=True)
     ap.add_argument("--count", type=int, default=1000)
     ap.add_argument("--out", default=os.path.join("data", "c4"))
-    ap.add_argument("--revision", default="main", help="dataset revision to pin")
+    ap.add_argument("--revision", default=REVISION, help="dataset revision (commit SHA)")
     args = ap.parse_args()
 
     from datasets import load_dataset
